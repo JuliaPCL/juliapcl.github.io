@@ -13,7 +13,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Home",
     "title": "PCL",
     "category": "Module",
-    "text": "The Julia wrapper for Point Cloud Library (PCL)\n\nYou can write:\n\nusing PCLCommon, PCLIO, PCLVisualization;\ncloud = PointCloud{PointXYZRGB}(\"your_pcd_file.pcd\")\nviewer = PCLVisualizer(\"pcl visualizer\")\naddPointCloud(viewer, cloud, id=\"input\")\nspin(viewer) # you will see the PCLVisualizer\n\nWhy?\n\nPCL.jl was stated to give us fast prototyping using PCL in interactive environment, without much loss of computational efficiency and flexibility.\n\nYou might find that there is already a python binding (strawlab/python-pcl) for the purpose, however, it lacks flexibility in particular; it only supports PointXYZ for point clouds at the moment. I guess the reason why it doesn't support arbitary point types for point clouds is that there is not elegant and simple way to expose C++ templated classes in python (actually I tried, but couldn't figure it out). Since I wanted to use arbiraty point types for point clouds, I decided to create a new one.\n\nThe reasons why I started writing the Julia (not python) binding are:\n\nThe Julia C++ interface Keno/Cxx.jl is quite powerful.\nIt enables us to call C++ functions/methods directly from Julia   without any glue code (unlike cython and swig), embed C++ into Julia and   vise versa.\nJulia's types can be parameterized and exposing C++ templated classes is quite straightfood.\ne.g. C++ pcl::PointCloud<PointT> can be represented as PointCloud{PointT} in Julia\nI thought it's suitable to wrap PCL's heavily templated APIs.\n\nComparison to python-pcl\n\nPros:\n\nSupport arbitaty point types for point clouds, whereas python-pcl only supports PointXYZ\nSupport PCL 1.8 or later\nMore consistent APIs\nCan write mixed C++/Julia\nPCLVisualizer: Jupyter integration using off-screen rendering\n\nCons:\n\nOnly works on osx for now\nHard to build entire dependencies\nSometime segfaults in Cxx.jl and Julia when doing wrong\n\nDependencies (in short)\n\npcl\nJulia\nCxx.jl\n\nAPI guidelines\n\nFunction names should be exactly same between Julia and C++.\nC++ template classes are available in Julia as templated types\nC++ dereferences which sometimes needed in C++, are hidden in implementation in Julia\n\ne.g.\n\nIn C++:\n\npcl::PassThrough<pcl::PointXYZ> pass;\npass.setInputCloud (cloud);\npass.setFilterFieldName (\"z\");\npass.setFilterLimits (0.0, 1.0);\npass.filter (*cloud_filtered);\n\nIn Julia:\n\npass = PassThrough{PointXYZ}()\nsetInputCloud(pass, cloud)\nsetFilterFieldName(pass, \"z\")\nsetFilterLimits(pass, 0.0, 1.0)\nfilter(pass, cloud_filtered)\n\nPackage structure\n\nTo simplify development and minimize dependencies, the Julia wrapper consists of the packages below:\n\nLibPCL.jl\nPCLCommon.jl\nPCLFeatures.jl\nPCLFilters.jl\nPCLIO.jl\nPCLKDTree.jl\nPCLKeyPoints.jl\nPCLOctree.jl\nPCLRecognition.jl\nPCLRegistration.jl\nPCLSampleConsensus.jl\nPCLSearch.jl\nPCLSegmentation.jl\nPCLSurface.jl\nPCLTracking.jl\nPCLVisualization.jl\n\nfollowing the PCL module structure except for the LibPCL.jl which manages binary dependencies (i.e. search installed PCL shared libraries or build and install them if not found).\n\n\n\n"
+    "text": "The Julia wrapper for Point Cloud Library (PCL)\n\nWith the packages, e.g., you can visualize a point cloud in 5 lines:\n\nusing PCLCommon, PCLIO, PCLVisualization\ncloud = PointCloud{PointXYZRGB}(\"your_pcd_file.pcd\")\nviewer = PCLVisualizer(\"pcl visualizer\")\naddPointCloud(viewer, cloud, id=\"input\")\nspin(viewer) # you will see the PCLVisualizer\n\n(Image: )\n\nWhy?\n\nPCL.jl was stated to give us fast prototyping using PCL in interactive environment, without much loss of computational efficiency and flexibility.\n\nYou might find that there is already a python binding (strawlab/python-pcl) for the purpose, however, it lacks flexibility in particular; it only supports PointXYZ for point clouds at the moment. I guess the reason why it doesn't support arbitary point types for point clouds is that there is not elegant and simple way to expose C++ templated classes in python (actually I tried, but couldn't figure it out). Since I wanted to use arbiraty point types for point clouds, I decided to create a new one.\n\nThe reasons why I started writing the Julia (not python) binding are:\n\nThe Julia C++ interface Keno/Cxx.jl is quite powerful.\nIt enables us to call C++ functions/methods directly from Julia   without any glue code (unlike cython and swig), embed C++ into Julia and   vise versa.\nJulia's types can be parameterized and exposing C++ templated classes is quite straightfood.\ne.g. C++ pcl::PointCloud<PointT> can be represented as PointCloud{PointT} in Julia\nI thought it's suitable to wrap PCL's heavily templated APIs.\n\nComparison to python-pcl\n\nPros:\n\nSupport arbitaty point types for point clouds, whereas python-pcl only supports PointXYZ\nSupport PCL 1.8 or later\nMore consistent APIs\nCan write mixed C++/Julia\nPCLVisualizer: Jupyter integration using off-screen rendering\n\nCons:\n\nOnly works on osx for now\nHard to build entire dependencies\nSometime segfaults in Cxx.jl and Julia when doing wrong\n\nDependencies (in short)\n\npcl\nJulia\nCxx.jl\n\nAPI guidelines\n\nFunction names should be exactly same between Julia and C++.\nC++ template classes are available in Julia as templated types\nC++ dereferences which sometimes needed in C++, are hidden in implementation in Julia\n\ne.g.\n\nIn C++:\n\npcl::PassThrough<pcl::PointXYZ> pass;\npass.setInputCloud (cloud);\npass.setFilterFieldName (\"z\");\npass.setFilterLimits (0.0, 1.0);\npass.filter (*cloud_filtered);\n\nIn Julia:\n\npass = PassThrough{PointXYZ}()\nsetInputCloud(pass, cloud)\nsetFilterFieldName(pass, \"z\")\nsetFilterLimits(pass, 0.0, 1.0)\nfilter(pass, cloud_filtered)\n\nPackage structure\n\nTo simplify development and minimize dependencies, the Julia wrapper consists of the packages below:\n\nLibPCL.jl\nPCLCommon.jl\nPCLFeatures.jl\nPCLFilters.jl\nPCLIO.jl\nPCLKDTree.jl\nPCLKeyPoints.jl\nPCLOctree.jl\nPCLRecognition.jl\nPCLRegistration.jl\nPCLSampleConsensus.jl\nPCLSearch.jl\nPCLSegmentation.jl\nPCLSurface.jl\nPCLTracking.jl\nPCLVisualization.jl\n\nfollowing the PCL module structure except for the LibPCL.jl which manages binary dependencies (i.e. search installed PCL shared libraries or build and install them if not found).\n\n\n\n"
 },
 
 {
@@ -37,7 +37,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Installation",
     "title": "Installation",
     "category": "section",
-    "text": "PCL Julia packages have fair complex dependencies, so please take a careful look at the installation guide for each dependency."
+    "text": "PCL Julia packages have fairly complex dependencies, so please take a careful look at the installation guide for each dependency."
 },
 
 {
@@ -77,7 +77,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Installation",
     "title": "Cxx.jl",
     "category": "section",
-    "text": "You need to install r9y9/Cxx.jl [1]. Building Cxx.jl is a bit complex, as it builds its own llvm and clang by default. Please take a careful look at the installation guide of Cxx.jl. Ideally, the installation can be done as follows:Pkg.clone(\"https://github.com/r9y9/Cxx.jl\")\nPkg.build(\"Cxx\")[1]: Forked from Keno/Cxx.jl for For RTTI support. Keno/Cxx.jl doesn't provides a way to enable RTTI without code modification for now."
+    "text": "You need to install r9y9/Cxx.jl [1]. Building Cxx.jl is a bit complex, as it builds its own llvm and clang by default. Please take a careful look at the installation guide of Cxx.jl. Ideally, the installation can be done as follows:Pkg.clone(\"https://github.com/r9y9/Cxx.jl\")\nPkg.build(\"Cxx\")[1]: Forked from Keno/Cxx.jl for RTTI support. Keno/Cxx.jl doesn't provides a way to enable RTTI without code modification for now."
 },
 
 {
@@ -89,11 +89,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "installation.html#Set-environmental-property-1",
+    "location": "installation.html#Set-environmental-variables-property-1",
     "page": "Installation",
-    "title": "Set environmental property",
+    "title": "Set environmental variables property",
     "category": "section",
-    "text": "There are a few environmental variables to be set property before installing Julia packages, otherwise throws errors during package compilation time. You must tell locations of PCL dependencies (boost, FLANN, Eigen and VTK) to Julia via the following environmental variables:Key Default Description\nBOOST_INCLUDE_DIR /usr/local/include (/usr/include/ for linux) Boost include directory\nFLANN_INCLUDE_DIR /usr/local/include (/usr/include/ for linux) Flann include directory\nEIGEN_INCLUDE_DIR /usr/local/include/eigen3 (/usr/include/eigen3 for linux) Eigen include directory\nVTK_INCLUDE_DIR_PARENT /usr/local/include (/usr/include/ for linux) Parent directory for VTK includes\nVTK_INCLUDE_DIR ${VTK_INCLUDE_DIR_PARENT}/vtk-${major}.${minor} VTK include directory (${major} and ${minor} will be automatically detected)"
+    "text": "There are a few environmental variables to be set property before installing Julia packages, otherwise it throws errors during package compilation time. You must tell locations of PCL dependencies (boost, FLANN, Eigen and VTK) to Julia via the following environmental variables:Key Default Description\nBOOST_INCLUDE_DIR /usr/local/include (/usr/include/ for linux) Boost include directory\nFLANN_INCLUDE_DIR /usr/local/include (/usr/include/ for linux) Flann include directory\nEIGEN_INCLUDE_DIR /usr/local/include/eigen3 (/usr/include/eigen3 for linux) Eigen include directory\nVTK_INCLUDE_DIR_PARENT /usr/local/include (/usr/include/ for linux) Parent directory for VTK includes\nVTK_INCLUDE_DIR ${VTK_INCLUDE_DIR_PARENT}/vtk-${major}.${minor} VTK include directory (${major} and ${minor} will be automatically detected)"
 },
 
 {
@@ -125,7 +125,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Getting started",
     "title": "Getting stareted",
     "category": "section",
-    "text": "PCL Julia packages follows the PCL module structure. If you need a particular module (e.g. PCLCommon.jl), then you can use the specific module(s) as follows:using PCLCommon, PCLIO;\ncloud = PointCloud{PointXYZ}(\"your_pcd_data.pcd\")If you want to import all the PCL packages, then:using PCLNote that it will take a few times to load (30 seconds~) since it compiles all the PCL packages."
+    "text": "PCL Julia packages follows the PCL module structure. If you need a particular module (e.g. PCLCommon.jl), then you can use the specific module(s) as follows:using PCLCommonIf you want to import all the PCL packages, then:using PCLNote that it will take a few times to load (30 seconds~) since it compiles all the PCL packages."
 },
 
 {
@@ -141,7 +141,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Getting started",
     "title": "Create an empty point cloud",
     "category": "section",
-    "text": "using PCLCommon\ncloud_xyz = PointCloud{PointXYZ}()For different point types, just change the type parameter as follows:using PCLCommon\ncloud_rgba = PointCloud{PointXYZRGBA}()"
+    "text": "using PCLCommoncloud_xyz = PointCloud{PointXYZ}()For different point types, just change the type parameter as follows:cloud_rgba = PointCloud{PointXYZRGBA}()"
 },
 
 {
@@ -149,7 +149,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Getting started",
     "title": "Create a point cloud with specified size",
     "category": "section",
-    "text": "using PCLCommon\ncloud_xyz = PointCloud{PointXYZ}(100, 200) # width=100, height=200"
+    "text": "cloud_xyz = PointCloud{PointXYZ}(100, 200) # width=100, height=200"
 },
 
 {
@@ -165,7 +165,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Getting started",
     "title": "Load a PCD file",
     "category": "section",
-    "text": "using PCLCommon, PCLIO\ncloud_xyz = PointCloud{PointXYZ}(\"your_pcd_data.pcd\")needs PCLIO.jl in addition to PCLCommon.jl."
+    "text": "using PCLCommon\nusing PCLIOcloud_xyz = PointCloud{PointXYZ}(\"your_pcd_data.pcd\")needs PCLIO.jl in addition to PCLCommon.jl."
 },
 
 {
@@ -181,7 +181,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Getting started",
     "title": "PassThrough filter",
     "category": "section",
-    "text": "using PCLCommon, PCLIO, PCLFilters;\ncloud = PointCloud{PointXYZRGB}(\"your_pcd_file.pcd\")\ncloud_filtered = PointCloud{PointXYZRGB}()\n\npass = PassThrough{PointXYZRGB}()\nsetInputCloud(pass, cloud)\nsetFilterFieldName(pass, \"z\")\nsetFilterLimits(pass, 0.0, 1.0)\nfilter(pass, cloud_filtered)needs PCLFilters.jl."
+    "text": "using PCLCommon\nusing PCLIO\nusing PCLFilterscloud = PointCloud{PointXYZRGB}(\"your_pcd_file.pcd\")\ncloud_filtered = PointCloud{PointXYZRGB}()\n\npass = PassThrough{PointXYZRGB}()\nsetInputCloud(pass, cloud)\nsetFilterFieldName(pass, \"z\")\nsetFilterLimits(pass, 0.0, 1.0)\nfilter(pass, cloud_filtered)needs PCLFilters.jl."
 },
 
 {
@@ -189,7 +189,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Getting started",
     "title": "Visualization",
     "category": "section",
-    "text": "using PCLCommon, PCLIO, PCLVisualization;\ncloud = PointCloud{PointXYZRGB}(\"your_pcd_file.pcd\")\nviewer = PCLVisualizer(\"pcl visualizer\")\naddPointCloud(viewer, cloud, id=\"input\")\nspin(viewer) # you will see the PCLVisualizerneeds PCLVisualization.jl."
+    "text": "using PCLCommon\nusing PCLIO\nusing PCLVisualizationcloud = PointCloud{PointXYZRGB}(\"your_pcd_file.pcd\")\nviewer = PCLVisualizer(\"pcl visualizer\")\naddPointCloud(viewer, cloud, id=\"input\")\nspin(viewer) # you will see the PCLVisualizerneeds PCLVisualization.jl."
 },
 
 {
