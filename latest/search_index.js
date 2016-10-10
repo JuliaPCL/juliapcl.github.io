@@ -201,7 +201,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#",
+    "location": "modules/common.html#",
     "page": "Common",
     "title": "Common",
     "category": "page",
@@ -209,15 +209,15 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon",
+    "location": "modules/common.html#PCLCommon",
     "page": "Common",
     "title": "PCLCommon",
     "category": "Module",
-    "text": "PCL common types, functions and utilities. The primary export is the PointCloud{PointT} (aliased to PointCloudPtr{PointT}), which represents a shared pointer of a point cloud (i.e. pcl::PointCloud<PointT>::Ptr) in PCL. You can create point clouds as follows:\n\nusing PCLCommon\n\n# Create empty point cloud\ncloud = PointCloud{PointXYZRGBA}()\n\nusing PCLCommon\nusing PCLIO\n\n# Create and load point cloud from a PCD file\ncloud = PointCloud{PointXYZRGB}(\"your_pcd_file.pcd\")\n\n\n\n"
+    "text": "PCL common types, functions and utilities.\n\nBasic usage\n\nThe primary export is the PointCloud{PointT} (aliased to PointCloudPtr{PointT}), which represents a shared pointer of a point cloud (i.e. pcl::PointCloud<PointT>::Ptr) in PCL. You can create point clouds as follows:\n\nusing PCLCommon\n\n# Create empty point cloud\ncloud = PointCloud{PointXYZRGBA}()\n\nwhich in C++ corresponds to:\n\npcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloud = pcl::PointCloud<pcl::PointXYZRGBA>::Ptr(\n        new pcl::PointCloud<pcl::PointXYZRGBA>);\n\nIf you want to load a point cloud from a PCD file, then use PCLIO.jl:\n\nusing PCLCommon\nusing PCLIO\n\n# Create and load point cloud from a PCD file\ncloud = PointCloud{PointXYZRGB}(\"your_pcd_file.pcd\")\n\nor\n\ncloud = PointCloud{PointXYZRGB}()\nloadPCDFile(\"your_pcd_file.pcd\", cloud)\n\nin C++:\n\npcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloud = pcl::PointCloud<pcl::PointXYZRGBA>::Ptr(\n        new pcl::PointCloud<pcl::PointXYZRGBA>);\npcl::loadPCDFile(\"your_pcd_file.pcd\", *cloud);\n\nIf you need a value representation rather than a smart pointer, then use XXXVal (e.g. PointCloudVal) instead:\n\ncloud = PointCloudVal{PointXYZRGBA}()\n\n\n\n"
 },
 
 {
-    "location": "api/common.html#PCLCommon.jl-1",
+    "location": "modules/common.html#PCLCommon.jl-1",
     "page": "Common",
     "title": "PCLCommon.jl",
     "category": "section",
@@ -225,7 +225,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#Index-1",
+    "location": "modules/common.html#Index-1",
     "page": "Common",
     "title": "Index",
     "category": "section",
@@ -233,7 +233,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.BoostSharedPtr",
+    "location": "modules/common.html#PCLCommon.BoostSharedPtr",
     "page": "Common",
     "title": "PCLCommon.BoostSharedPtr",
     "category": "Constant",
@@ -241,7 +241,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointCloud",
+    "location": "modules/common.html#PCLCommon.PointCloud",
     "page": "Common",
     "title": "PCLCommon.PointCloud",
     "category": "Constant",
@@ -249,7 +249,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.use_count-Tuple{Cxx.CppValue{Cxx.CxxQualType{Cxx.CppTemplate{Cxx.CppBaseType{Symbol(\"boost::shared_ptr\")},Tuple{T}},(false,false,false)},N}}",
+    "location": "modules/common.html#PCLCommon.use_count-Tuple{Cxx.CppValue{Cxx.CxxQualType{Cxx.CppTemplate{Cxx.CppBaseType{Symbol(\"boost::shared_ptr\")},Tuple{T}},(false,false,false)},N}}",
     "page": "Common",
     "title": "PCLCommon.use_count",
     "category": "Method",
@@ -257,7 +257,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.Axis",
+    "location": "modules/common.html#PCLCommon.Axis",
     "page": "Common",
     "title": "PCLCommon.Axis",
     "category": "Type",
@@ -265,7 +265,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.BRISKSignature512",
+    "location": "modules/common.html#PCLCommon.BRISKSignature512",
     "page": "Common",
     "title": "PCLCommon.BRISKSignature512",
     "category": "Type",
@@ -273,7 +273,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.Boundary",
+    "location": "modules/common.html#PCLCommon.Boundary",
     "page": "Common",
     "title": "PCLCommon.Boundary",
     "category": "Type",
@@ -281,7 +281,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.CPPFSignature",
+    "location": "modules/common.html#PCLCommon.CPPFSignature",
     "page": "Common",
     "title": "PCLCommon.CPPFSignature",
     "category": "Type",
@@ -289,7 +289,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.Correspondence",
+    "location": "modules/common.html#PCLCommon.Correspondence",
     "page": "Common",
     "title": "PCLCommon.Correspondence",
     "category": "Type",
@@ -297,7 +297,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.Correspondences",
+    "location": "modules/common.html#PCLCommon.Correspondences",
     "page": "Common",
     "title": "PCLCommon.Correspondences",
     "category": "Type",
@@ -305,7 +305,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.ESFSignature640",
+    "location": "modules/common.html#PCLCommon.ESFSignature640",
     "page": "Common",
     "title": "PCLCommon.ESFSignature640",
     "category": "Type",
@@ -313,7 +313,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.FPFHSignature33",
+    "location": "modules/common.html#PCLCommon.FPFHSignature33",
     "page": "Common",
     "title": "PCLCommon.FPFHSignature33",
     "category": "Type",
@@ -321,7 +321,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.GRSDSignature21",
+    "location": "modules/common.html#PCLCommon.GRSDSignature21",
     "page": "Common",
     "title": "PCLCommon.GRSDSignature21",
     "category": "Type",
@@ -329,7 +329,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.IntensityGradient",
+    "location": "modules/common.html#PCLCommon.IntensityGradient",
     "page": "Common",
     "title": "PCLCommon.IntensityGradient",
     "category": "Type",
@@ -337,7 +337,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.InterestPoint",
+    "location": "modules/common.html#PCLCommon.InterestPoint",
     "page": "Common",
     "title": "PCLCommon.InterestPoint",
     "category": "Type",
@@ -345,7 +345,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.Label",
+    "location": "modules/common.html#PCLCommon.Label",
     "page": "Common",
     "title": "PCLCommon.Label",
     "category": "Type",
@@ -353,7 +353,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.ModelCoefficients",
+    "location": "modules/common.html#PCLCommon.ModelCoefficients",
     "page": "Common",
     "title": "PCLCommon.ModelCoefficients",
     "category": "Type",
@@ -361,7 +361,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.MomentInvariants",
+    "location": "modules/common.html#PCLCommon.MomentInvariants",
     "page": "Common",
     "title": "PCLCommon.MomentInvariants",
     "category": "Type",
@@ -369,7 +369,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.Narf36",
+    "location": "modules/common.html#PCLCommon.Narf36",
     "page": "Common",
     "title": "PCLCommon.Narf36",
     "category": "Type",
@@ -377,7 +377,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.Normal",
+    "location": "modules/common.html#PCLCommon.Normal",
     "page": "Common",
     "title": "PCLCommon.Normal",
     "category": "Type",
@@ -385,7 +385,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.NormalBasedSignature12",
+    "location": "modules/common.html#PCLCommon.NormalBasedSignature12",
     "page": "Common",
     "title": "PCLCommon.NormalBasedSignature12",
     "category": "Type",
@@ -393,7 +393,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PCLBase",
+    "location": "modules/common.html#PCLCommon.PCLBase",
     "page": "Common",
     "title": "PCLCommon.PCLBase",
     "category": "Type",
@@ -401,7 +401,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PCLPointCloud2",
+    "location": "modules/common.html#PCLCommon.PCLPointCloud2",
     "page": "Common",
     "title": "PCLCommon.PCLPointCloud2",
     "category": "Type",
@@ -409,7 +409,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PFHRGBSignature250",
+    "location": "modules/common.html#PCLCommon.PFHRGBSignature250",
     "page": "Common",
     "title": "PCLCommon.PFHRGBSignature250",
     "category": "Type",
@@ -417,7 +417,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PFHSignature125",
+    "location": "modules/common.html#PCLCommon.PFHSignature125",
     "page": "Common",
     "title": "PCLCommon.PFHSignature125",
     "category": "Type",
@@ -425,7 +425,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PPFRGBSignature",
+    "location": "modules/common.html#PCLCommon.PPFRGBSignature",
     "page": "Common",
     "title": "PCLCommon.PPFRGBSignature",
     "category": "Type",
@@ -433,7 +433,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PPFSignature",
+    "location": "modules/common.html#PCLCommon.PPFSignature",
     "page": "Common",
     "title": "PCLCommon.PPFSignature",
     "category": "Type",
@@ -441,7 +441,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointDEM",
+    "location": "modules/common.html#PCLCommon.PointDEM",
     "page": "Common",
     "title": "PCLCommon.PointDEM",
     "category": "Type",
@@ -449,7 +449,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointIndices",
+    "location": "modules/common.html#PCLCommon.PointIndices",
     "page": "Common",
     "title": "PCLCommon.PointIndices",
     "category": "Type",
@@ -457,7 +457,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointNormal",
+    "location": "modules/common.html#PCLCommon.PointNormal",
     "page": "Common",
     "title": "PCLCommon.PointNormal",
     "category": "Type",
@@ -465,7 +465,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointSurfel",
+    "location": "modules/common.html#PCLCommon.PointSurfel",
     "page": "Common",
     "title": "PCLCommon.PointSurfel",
     "category": "Type",
@@ -473,7 +473,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointUV",
+    "location": "modules/common.html#PCLCommon.PointUV",
     "page": "Common",
     "title": "PCLCommon.PointUV",
     "category": "Type",
@@ -481,7 +481,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointWithRange",
+    "location": "modules/common.html#PCLCommon.PointWithRange",
     "page": "Common",
     "title": "PCLCommon.PointWithRange",
     "category": "Type",
@@ -489,7 +489,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointWithScale",
+    "location": "modules/common.html#PCLCommon.PointWithScale",
     "page": "Common",
     "title": "PCLCommon.PointWithScale",
     "category": "Type",
@@ -497,7 +497,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointWithViewpoint",
+    "location": "modules/common.html#PCLCommon.PointWithViewpoint",
     "page": "Common",
     "title": "PCLCommon.PointWithViewpoint",
     "category": "Type",
@@ -505,7 +505,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointXY",
+    "location": "modules/common.html#PCLCommon.PointXY",
     "page": "Common",
     "title": "PCLCommon.PointXY",
     "category": "Type",
@@ -513,7 +513,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointXYZ",
+    "location": "modules/common.html#PCLCommon.PointXYZ",
     "page": "Common",
     "title": "PCLCommon.PointXYZ",
     "category": "Type",
@@ -521,7 +521,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointXYZHSV",
+    "location": "modules/common.html#PCLCommon.PointXYZHSV",
     "page": "Common",
     "title": "PCLCommon.PointXYZHSV",
     "category": "Type",
@@ -529,7 +529,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointXYZI",
+    "location": "modules/common.html#PCLCommon.PointXYZI",
     "page": "Common",
     "title": "PCLCommon.PointXYZI",
     "category": "Type",
@@ -537,7 +537,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointXYZINormal",
+    "location": "modules/common.html#PCLCommon.PointXYZINormal",
     "page": "Common",
     "title": "PCLCommon.PointXYZINormal",
     "category": "Type",
@@ -545,7 +545,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointXYZL",
+    "location": "modules/common.html#PCLCommon.PointXYZL",
     "page": "Common",
     "title": "PCLCommon.PointXYZL",
     "category": "Type",
@@ -553,7 +553,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointXYZLNormal",
+    "location": "modules/common.html#PCLCommon.PointXYZLNormal",
     "page": "Common",
     "title": "PCLCommon.PointXYZLNormal",
     "category": "Type",
@@ -561,7 +561,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointXYZRGB",
+    "location": "modules/common.html#PCLCommon.PointXYZRGB",
     "page": "Common",
     "title": "PCLCommon.PointXYZRGB",
     "category": "Type",
@@ -569,7 +569,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointXYZRGBA",
+    "location": "modules/common.html#PCLCommon.PointXYZRGBA",
     "page": "Common",
     "title": "PCLCommon.PointXYZRGBA",
     "category": "Type",
@@ -577,7 +577,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointXYZRGBL",
+    "location": "modules/common.html#PCLCommon.PointXYZRGBL",
     "page": "Common",
     "title": "PCLCommon.PointXYZRGBL",
     "category": "Type",
@@ -585,7 +585,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointXYZRGBNormal",
+    "location": "modules/common.html#PCLCommon.PointXYZRGBNormal",
     "page": "Common",
     "title": "PCLCommon.PointXYZRGBNormal",
     "category": "Type",
@@ -593,7 +593,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PrincipalCurvatures",
+    "location": "modules/common.html#PCLCommon.PrincipalCurvatures",
     "page": "Common",
     "title": "PCLCommon.PrincipalCurvatures",
     "category": "Type",
@@ -601,7 +601,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PrincipalRadiiRSD",
+    "location": "modules/common.html#PCLCommon.PrincipalRadiiRSD",
     "page": "Common",
     "title": "PCLCommon.PrincipalRadiiRSD",
     "category": "Type",
@@ -609,7 +609,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.RangeImage",
+    "location": "modules/common.html#PCLCommon.RangeImage",
     "page": "Common",
     "title": "PCLCommon.RangeImage",
     "category": "Type",
@@ -617,7 +617,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.ReferenceFrame",
+    "location": "modules/common.html#PCLCommon.ReferenceFrame",
     "page": "Common",
     "title": "PCLCommon.ReferenceFrame",
     "category": "Type",
@@ -625,7 +625,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.SHOT1344",
+    "location": "modules/common.html#PCLCommon.SHOT1344",
     "page": "Common",
     "title": "PCLCommon.SHOT1344",
     "category": "Type",
@@ -633,7 +633,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.SHOT352",
+    "location": "modules/common.html#PCLCommon.SHOT352",
     "page": "Common",
     "title": "PCLCommon.SHOT352",
     "category": "Type",
@@ -641,7 +641,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.ShapeContext1980",
+    "location": "modules/common.html#PCLCommon.ShapeContext1980",
     "page": "Common",
     "title": "PCLCommon.ShapeContext1980",
     "category": "Type",
@@ -649,7 +649,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.UniqueShapeContext1960",
+    "location": "modules/common.html#PCLCommon.UniqueShapeContext1960",
     "page": "Common",
     "title": "PCLCommon.UniqueShapeContext1960",
     "category": "Type",
@@ -657,7 +657,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.VFHSignature308",
+    "location": "modules/common.html#PCLCommon.VFHSignature308",
     "page": "Common",
     "title": "PCLCommon.VFHSignature308",
     "category": "Type",
@@ -665,7 +665,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.@boostsharedptr-Tuple{Any,Vararg{Any,N}}",
+    "location": "modules/common.html#PCLCommon.@boostsharedptr-Tuple{Any,Vararg{Any,N}}",
     "page": "Common",
     "title": "PCLCommon.@boostsharedptr",
     "category": "Macro",
@@ -673,7 +673,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.@defconstructor-Tuple{Any,Any}",
+    "location": "modules/common.html#PCLCommon.@defconstructor-Tuple{Any,Any}",
     "page": "Common",
     "title": "PCLCommon.@defconstructor",
     "category": "Macro",
@@ -681,7 +681,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.@defpcltype-Tuple{Any,Any}",
+    "location": "modules/common.html#PCLCommon.@defpcltype-Tuple{Any,Any}",
     "page": "Common",
     "title": "PCLCommon.@defpcltype",
     "category": "Macro",
@@ -689,7 +689,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.@defptrconstructor-Tuple{Any,Any}",
+    "location": "modules/common.html#PCLCommon.@defptrconstructor-Tuple{Any,Any}",
     "page": "Common",
     "title": "PCLCommon.@defptrconstructor",
     "category": "Macro",
@@ -697,7 +697,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#Base.convert-Tuple{Type{PCLCommon.PointCloudPtr{T}},PCLCommon.PointCloudPtr{PointT}}",
+    "location": "modules/common.html#Base.convert-Tuple{Type{PCLCommon.PointCloudPtr{T}},PCLCommon.PointCloudPtr{PointT}}",
     "page": "Common",
     "title": "Base.convert",
     "category": "Method",
@@ -705,7 +705,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.deg2rad-Tuple{AbstractFloat}",
+    "location": "modules/common.html#PCLCommon.deg2rad-Tuple{AbstractFloat}",
     "page": "Common",
     "title": "PCLCommon.deg2rad",
     "category": "Method",
@@ -713,7 +713,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.CorrespondencePtr",
+    "location": "modules/common.html#PCLCommon.CorrespondencePtr",
     "page": "Common",
     "title": "PCLCommon.CorrespondencePtr",
     "category": "Type",
@@ -721,7 +721,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.CorrespondenceVal",
+    "location": "modules/common.html#PCLCommon.CorrespondenceVal",
     "page": "Common",
     "title": "PCLCommon.CorrespondenceVal",
     "category": "Type",
@@ -729,7 +729,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.CorrespondencesPtr",
+    "location": "modules/common.html#PCLCommon.CorrespondencesPtr",
     "page": "Common",
     "title": "PCLCommon.CorrespondencesPtr",
     "category": "Type",
@@ -737,7 +737,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.CorrespondencesVal",
+    "location": "modules/common.html#PCLCommon.CorrespondencesVal",
     "page": "Common",
     "title": "PCLCommon.CorrespondencesVal",
     "category": "Type",
@@ -745,7 +745,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.ModelCoefficientsPtr",
+    "location": "modules/common.html#PCLCommon.ModelCoefficientsPtr",
     "page": "Common",
     "title": "PCLCommon.ModelCoefficientsPtr",
     "category": "Type",
@@ -753,7 +753,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.ModelCoefficientsVal",
+    "location": "modules/common.html#PCLCommon.ModelCoefficientsVal",
     "page": "Common",
     "title": "PCLCommon.ModelCoefficientsVal",
     "category": "Type",
@@ -761,7 +761,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PCLPointCloud2Ptr",
+    "location": "modules/common.html#PCLCommon.PCLPointCloud2Ptr",
     "page": "Common",
     "title": "PCLCommon.PCLPointCloud2Ptr",
     "category": "Type",
@@ -769,7 +769,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PCLPointCloud2Val",
+    "location": "modules/common.html#PCLCommon.PCLPointCloud2Val",
     "page": "Common",
     "title": "PCLCommon.PCLPointCloud2Val",
     "category": "Type",
@@ -777,7 +777,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointCloudPtr",
+    "location": "modules/common.html#PCLCommon.PointCloudPtr",
     "page": "Common",
     "title": "PCLCommon.PointCloudPtr",
     "category": "Type",
@@ -785,7 +785,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointCloudVal",
+    "location": "modules/common.html#PCLCommon.PointCloudVal",
     "page": "Common",
     "title": "PCLCommon.PointCloudVal",
     "category": "Type",
@@ -793,7 +793,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointIndicesPtr",
+    "location": "modules/common.html#PCLCommon.PointIndicesPtr",
     "page": "Common",
     "title": "PCLCommon.PointIndicesPtr",
     "category": "Type",
@@ -801,7 +801,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.PointIndicesVal",
+    "location": "modules/common.html#PCLCommon.PointIndicesVal",
     "page": "Common",
     "title": "PCLCommon.PointIndicesVal",
     "category": "Type",
@@ -809,7 +809,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.RangeImagePtr",
+    "location": "modules/common.html#PCLCommon.RangeImagePtr",
     "page": "Common",
     "title": "PCLCommon.RangeImagePtr",
     "category": "Type",
@@ -817,7 +817,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#PCLCommon.RangeImageVal",
+    "location": "modules/common.html#PCLCommon.RangeImageVal",
     "page": "Common",
     "title": "PCLCommon.RangeImageVal",
     "category": "Type",
@@ -825,7 +825,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/common.html#Reference-1",
+    "location": "modules/common.html#Reference-1",
     "page": "Common",
     "title": "Reference",
     "category": "section",
@@ -833,7 +833,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/features.html#",
+    "location": "modules/features.html#",
     "page": "Features",
     "title": "Features",
     "category": "page",
@@ -841,7 +841,15 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/features.html#PCLFeatures.jl-1",
+    "location": "modules/features.html#PCLFeatures",
+    "page": "Features",
+    "title": "PCLFeatures",
+    "category": "Module",
+    "text": "The pcl_features library contains data structures and mechanisms for 3D feature estimation from point cloud data\n\nhttp://docs.pointclouds.org/trunk/group__features.html\n\nExports\n\nAbstractFeature\nAbstractNormal\nAbstractSHOT\nBOARDLocalReferenceFrameEstimation\nNormalEstimation\nNormalEstimationOMP\nSHOTEstimation\nSHOTEstimationOMP\ncompute\ngetKSearch\ngetRadiusSearch\ngetSearchMethod\ngetSearchParameter\ngetSearchSurface\nsetFindHoles\nsetInputNormals\nsetKSearch\nsetRadiusSearch\nsetSearchMethod\nsetSearchSurface\n\n\n\n"
+},
+
+{
+    "location": "modules/features.html#PCLFeatures.jl-1",
     "page": "Features",
     "title": "PCLFeatures.jl",
     "category": "section",
@@ -849,7 +857,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/features.html#Index-1",
+    "location": "modules/features.html#Index-1",
     "page": "Features",
     "title": "Index",
     "category": "section",
@@ -857,7 +865,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/features.html#PCLFeatures.BOARDLocalReferenceFrameEstimation",
+    "location": "modules/features.html#PCLFeatures.BOARDLocalReferenceFrameEstimation",
     "page": "Features",
     "title": "PCLFeatures.BOARDLocalReferenceFrameEstimation",
     "category": "Constant",
@@ -865,7 +873,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/features.html#PCLFeatures.NormalEstimation",
+    "location": "modules/features.html#PCLFeatures.NormalEstimation",
     "page": "Features",
     "title": "PCLFeatures.NormalEstimation",
     "category": "Constant",
@@ -873,7 +881,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/features.html#PCLFeatures.NormalEstimationOMP",
+    "location": "modules/features.html#PCLFeatures.NormalEstimationOMP",
     "page": "Features",
     "title": "PCLFeatures.NormalEstimationOMP",
     "category": "Constant",
@@ -881,7 +889,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/features.html#PCLFeatures.SHOTEstimation",
+    "location": "modules/features.html#PCLFeatures.SHOTEstimation",
     "page": "Features",
     "title": "PCLFeatures.SHOTEstimation",
     "category": "Constant",
@@ -889,7 +897,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/features.html#PCLFeatures.SHOTEstimationOMP",
+    "location": "modules/features.html#PCLFeatures.SHOTEstimationOMP",
     "page": "Features",
     "title": "PCLFeatures.SHOTEstimationOMP",
     "category": "Constant",
@@ -897,7 +905,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/features.html#PCLFeatures.BOARDLocalReferenceFrameEstimationPtr",
+    "location": "modules/features.html#PCLFeatures.BOARDLocalReferenceFrameEstimationPtr",
     "page": "Features",
     "title": "PCLFeatures.BOARDLocalReferenceFrameEstimationPtr",
     "category": "Type",
@@ -905,7 +913,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/features.html#PCLFeatures.BOARDLocalReferenceFrameEstimationVal",
+    "location": "modules/features.html#PCLFeatures.BOARDLocalReferenceFrameEstimationVal",
     "page": "Features",
     "title": "PCLFeatures.BOARDLocalReferenceFrameEstimationVal",
     "category": "Type",
@@ -913,7 +921,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/features.html#PCLFeatures.NormalEstimationOMPPtr",
+    "location": "modules/features.html#PCLFeatures.NormalEstimationOMPPtr",
     "page": "Features",
     "title": "PCLFeatures.NormalEstimationOMPPtr",
     "category": "Type",
@@ -921,7 +929,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/features.html#PCLFeatures.NormalEstimationOMPVal",
+    "location": "modules/features.html#PCLFeatures.NormalEstimationOMPVal",
     "page": "Features",
     "title": "PCLFeatures.NormalEstimationOMPVal",
     "category": "Type",
@@ -929,7 +937,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/features.html#PCLFeatures.NormalEstimationPtr",
+    "location": "modules/features.html#PCLFeatures.NormalEstimationPtr",
     "page": "Features",
     "title": "PCLFeatures.NormalEstimationPtr",
     "category": "Type",
@@ -937,7 +945,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/features.html#PCLFeatures.NormalEstimationVal",
+    "location": "modules/features.html#PCLFeatures.NormalEstimationVal",
     "page": "Features",
     "title": "PCLFeatures.NormalEstimationVal",
     "category": "Type",
@@ -945,7 +953,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/features.html#PCLFeatures.SHOTEstimationOMPPtr",
+    "location": "modules/features.html#PCLFeatures.SHOTEstimationOMPPtr",
     "page": "Features",
     "title": "PCLFeatures.SHOTEstimationOMPPtr",
     "category": "Type",
@@ -953,7 +961,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/features.html#PCLFeatures.SHOTEstimationOMPVal",
+    "location": "modules/features.html#PCLFeatures.SHOTEstimationOMPVal",
     "page": "Features",
     "title": "PCLFeatures.SHOTEstimationOMPVal",
     "category": "Type",
@@ -961,7 +969,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/features.html#PCLFeatures.SHOTEstimationPtr",
+    "location": "modules/features.html#PCLFeatures.SHOTEstimationPtr",
     "page": "Features",
     "title": "PCLFeatures.SHOTEstimationPtr",
     "category": "Type",
@@ -969,7 +977,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/features.html#PCLFeatures.SHOTEstimationVal",
+    "location": "modules/features.html#PCLFeatures.SHOTEstimationVal",
     "page": "Features",
     "title": "PCLFeatures.SHOTEstimationVal",
     "category": "Type",
@@ -977,7 +985,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/features.html#Reference-1",
+    "location": "modules/features.html#Reference-1",
     "page": "Features",
     "title": "Reference",
     "category": "section",
@@ -985,7 +993,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#",
+    "location": "modules/filters.html#",
     "page": "Filters",
     "title": "Filters",
     "category": "page",
@@ -993,7 +1001,15 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.jl-1",
+    "location": "modules/filters.html#PCLFilters",
+    "page": "Filters",
+    "title": "PCLFilters",
+    "category": "Module",
+    "text": "The pcl_filters library contains outlier and noise removal mechanisms for 3D point cloud data filtering applications.\n\nhttp://docs.pointclouds.org/trunk/group__filters.html\n\nExports\n\nAbstractFilter\nAbstractVoxelGridFilter\nApproximateVoxelGrid\nExtractIndices\nPassThrough\nRadiusOutlierRemoval\nStatisticalOutlierRemoval\nUniformSampling\nVoxelGrid\ngetRemovedIndices\nsetFilterFieldName\nsetFilterLimits\nsetKeepOrganized\nsetLeafSize\nsetMeanK\nsetMinNeighborsInRadius\nsetNegative\nsetRadiusSearch\nsetStddevMulThresh\n\n\n\n"
+},
+
+{
+    "location": "modules/filters.html#PCLFilters.jl-1",
     "page": "Filters",
     "title": "PCLFilters.jl",
     "category": "section",
@@ -1001,7 +1017,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#Index-1",
+    "location": "modules/filters.html#Index-1",
     "page": "Filters",
     "title": "Index",
     "category": "section",
@@ -1009,7 +1025,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.ApproximateVoxelGrid",
+    "location": "modules/filters.html#PCLFilters.ApproximateVoxelGrid",
     "page": "Filters",
     "title": "PCLFilters.ApproximateVoxelGrid",
     "category": "Constant",
@@ -1017,7 +1033,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.ExtractIndices",
+    "location": "modules/filters.html#PCLFilters.ExtractIndices",
     "page": "Filters",
     "title": "PCLFilters.ExtractIndices",
     "category": "Constant",
@@ -1025,7 +1041,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.PassThrough",
+    "location": "modules/filters.html#PCLFilters.PassThrough",
     "page": "Filters",
     "title": "PCLFilters.PassThrough",
     "category": "Constant",
@@ -1033,7 +1049,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.RadiusOutlierRemoval",
+    "location": "modules/filters.html#PCLFilters.RadiusOutlierRemoval",
     "page": "Filters",
     "title": "PCLFilters.RadiusOutlierRemoval",
     "category": "Constant",
@@ -1041,7 +1057,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.StatisticalOutlierRemoval",
+    "location": "modules/filters.html#PCLFilters.StatisticalOutlierRemoval",
     "page": "Filters",
     "title": "PCLFilters.StatisticalOutlierRemoval",
     "category": "Constant",
@@ -1049,7 +1065,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.UniformSampling",
+    "location": "modules/filters.html#PCLFilters.UniformSampling",
     "page": "Filters",
     "title": "PCLFilters.UniformSampling",
     "category": "Constant",
@@ -1057,7 +1073,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.VoxelGrid",
+    "location": "modules/filters.html#PCLFilters.VoxelGrid",
     "page": "Filters",
     "title": "PCLFilters.VoxelGrid",
     "category": "Constant",
@@ -1065,7 +1081,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.ApproximateVoxelGridPtr",
+    "location": "modules/filters.html#PCLFilters.ApproximateVoxelGridPtr",
     "page": "Filters",
     "title": "PCLFilters.ApproximateVoxelGridPtr",
     "category": "Type",
@@ -1073,7 +1089,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.ApproximateVoxelGridVal",
+    "location": "modules/filters.html#PCLFilters.ApproximateVoxelGridVal",
     "page": "Filters",
     "title": "PCLFilters.ApproximateVoxelGridVal",
     "category": "Type",
@@ -1081,7 +1097,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.ExtractIndicesPtr",
+    "location": "modules/filters.html#PCLFilters.ExtractIndicesPtr",
     "page": "Filters",
     "title": "PCLFilters.ExtractIndicesPtr",
     "category": "Type",
@@ -1089,7 +1105,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.ExtractIndicesVal",
+    "location": "modules/filters.html#PCLFilters.ExtractIndicesVal",
     "page": "Filters",
     "title": "PCLFilters.ExtractIndicesVal",
     "category": "Type",
@@ -1097,7 +1113,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.PassThroughPtr",
+    "location": "modules/filters.html#PCLFilters.PassThroughPtr",
     "page": "Filters",
     "title": "PCLFilters.PassThroughPtr",
     "category": "Type",
@@ -1105,7 +1121,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.PassThroughVal",
+    "location": "modules/filters.html#PCLFilters.PassThroughVal",
     "page": "Filters",
     "title": "PCLFilters.PassThroughVal",
     "category": "Type",
@@ -1113,7 +1129,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.RadiusOutlierRemovalPtr",
+    "location": "modules/filters.html#PCLFilters.RadiusOutlierRemovalPtr",
     "page": "Filters",
     "title": "PCLFilters.RadiusOutlierRemovalPtr",
     "category": "Type",
@@ -1121,7 +1137,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.RadiusOutlierRemovalVal",
+    "location": "modules/filters.html#PCLFilters.RadiusOutlierRemovalVal",
     "page": "Filters",
     "title": "PCLFilters.RadiusOutlierRemovalVal",
     "category": "Type",
@@ -1129,7 +1145,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.StatisticalOutlierRemovalPtr",
+    "location": "modules/filters.html#PCLFilters.StatisticalOutlierRemovalPtr",
     "page": "Filters",
     "title": "PCLFilters.StatisticalOutlierRemovalPtr",
     "category": "Type",
@@ -1137,7 +1153,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.StatisticalOutlierRemovalVal",
+    "location": "modules/filters.html#PCLFilters.StatisticalOutlierRemovalVal",
     "page": "Filters",
     "title": "PCLFilters.StatisticalOutlierRemovalVal",
     "category": "Type",
@@ -1145,7 +1161,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.UniformSamplingPtr",
+    "location": "modules/filters.html#PCLFilters.UniformSamplingPtr",
     "page": "Filters",
     "title": "PCLFilters.UniformSamplingPtr",
     "category": "Type",
@@ -1153,7 +1169,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.UniformSamplingVal",
+    "location": "modules/filters.html#PCLFilters.UniformSamplingVal",
     "page": "Filters",
     "title": "PCLFilters.UniformSamplingVal",
     "category": "Type",
@@ -1161,7 +1177,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.VoxelGridPtr",
+    "location": "modules/filters.html#PCLFilters.VoxelGridPtr",
     "page": "Filters",
     "title": "PCLFilters.VoxelGridPtr",
     "category": "Type",
@@ -1169,7 +1185,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#PCLFilters.VoxelGridVal",
+    "location": "modules/filters.html#PCLFilters.VoxelGridVal",
     "page": "Filters",
     "title": "PCLFilters.VoxelGridVal",
     "category": "Type",
@@ -1177,7 +1193,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/filters.html#Reference-1",
+    "location": "modules/filters.html#Reference-1",
     "page": "Filters",
     "title": "Reference",
     "category": "section",
@@ -1185,7 +1201,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/io.html#",
+    "location": "modules/io.html#",
     "page": "IO",
     "title": "IO",
     "category": "page",
@@ -1193,7 +1209,15 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/io.html#PCLIO.jl-1",
+    "location": "modules/io.html#PCLIO",
+    "page": "IO",
+    "title": "PCLIO",
+    "category": "Module",
+    "text": "The pcl_io library contains classes and functions for reading and writing point cloud data (PCD) files, as well as capturing point clouds from a variety of sensing devices\n\nExports\n\nload\nloadOBJFile\nloadPCDFile\nloadPLYFile\nsaveOBJFile\nsavePCDFile\nsavePLYFile\n\n\n\n"
+},
+
+{
+    "location": "modules/io.html#PCLIO.jl-1",
     "page": "IO",
     "title": "PCLIO.jl",
     "category": "section",
@@ -1201,7 +1225,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/io.html#Index-1",
+    "location": "modules/io.html#Index-1",
     "page": "IO",
     "title": "Index",
     "category": "section",
@@ -1209,7 +1233,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/io.html#Reference-1",
+    "location": "modules/io.html#Reference-1",
     "page": "IO",
     "title": "Reference",
     "category": "section",
@@ -1217,7 +1241,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/kdtree.html#",
+    "location": "modules/kdtree.html#",
     "page": "KDTree",
     "title": "KDTree",
     "category": "page",
@@ -1225,7 +1249,15 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/kdtree.html#PCLKDTree.jl-1",
+    "location": "modules/kdtree.html#PCLKDTree",
+    "page": "KDTree",
+    "title": "PCLKDTree",
+    "category": "Module",
+    "text": "The pcl_kdtree library provides the kd-tree data-structure, using flann, nearest neighbor searches.\n\nhttp://docs.pointclouds.org/trunk/group__kdtree.html\n\nExports\n\nKdTree\nKdTreeFLANN\nnearestKSearch\n\n\n\n"
+},
+
+{
+    "location": "modules/kdtree.html#PCLKDTree.jl-1",
     "page": "KDTree",
     "title": "PCLKDTree.jl",
     "category": "section",
@@ -1233,7 +1265,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/kdtree.html#Index-1",
+    "location": "modules/kdtree.html#Index-1",
     "page": "KDTree",
     "title": "Index",
     "category": "section",
@@ -1241,7 +1273,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/kdtree.html#PCLKDTree.KdTreeFLANN",
+    "location": "modules/kdtree.html#PCLKDTree.KdTreeFLANN",
     "page": "KDTree",
     "title": "PCLKDTree.KdTreeFLANN",
     "category": "Constant",
@@ -1249,7 +1281,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/kdtree.html#PCLKDTree.KdTreeFLANNPtr",
+    "location": "modules/kdtree.html#PCLKDTree.KdTreeFLANNPtr",
     "page": "KDTree",
     "title": "PCLKDTree.KdTreeFLANNPtr",
     "category": "Type",
@@ -1257,7 +1289,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/kdtree.html#PCLKDTree.KdTreeFLANNVal",
+    "location": "modules/kdtree.html#PCLKDTree.KdTreeFLANNVal",
     "page": "KDTree",
     "title": "PCLKDTree.KdTreeFLANNVal",
     "category": "Type",
@@ -1265,7 +1297,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/kdtree.html#Reference-1",
+    "location": "modules/kdtree.html#Reference-1",
     "page": "KDTree",
     "title": "Reference",
     "category": "section",
@@ -1273,7 +1305,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/keypoints.html#",
+    "location": "modules/keypoints.html#",
     "page": "KeyPoints",
     "title": "KeyPoints",
     "category": "page",
@@ -1281,7 +1313,15 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/keypoints.html#PCLKeyPoints.jl-1",
+    "location": "modules/keypoints.html#PCLKeyPoints",
+    "page": "KeyPoints",
+    "title": "PCLKeyPoints",
+    "category": "Module",
+    "text": "The pcl_keypoints library contains implementations of two point cloud keypoint detection algorithms\n\nhttp://docs.pointclouds.org/trunk/group__keypoints.html\n\nExports\n\n\n\n"
+},
+
+{
+    "location": "modules/keypoints.html#PCLKeyPoints.jl-1",
     "page": "KeyPoints",
     "title": "PCLKeyPoints.jl",
     "category": "section",
@@ -1289,7 +1329,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/keypoints.html#Index-1",
+    "location": "modules/keypoints.html#Index-1",
     "page": "KeyPoints",
     "title": "Index",
     "category": "section",
@@ -1297,7 +1337,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/keypoints.html#Reference-1",
+    "location": "modules/keypoints.html#Reference-1",
     "page": "KeyPoints",
     "title": "Reference",
     "category": "section",
@@ -1305,7 +1345,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/octree.html#",
+    "location": "modules/octree.html#",
     "page": "Octree",
     "title": "Octree",
     "category": "page",
@@ -1313,7 +1353,15 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/octree.html#PCLOctree.jl-1",
+    "location": "modules/octree.html#PCLOctree",
+    "page": "Octree",
+    "title": "PCLOctree",
+    "category": "Module",
+    "text": "The pcl_octree library provides efficient methods for creating a hierarchical tree data structure from point cloud data.\n\nhttp://docs.pointclouds.org/trunk/group__octree.html\n\nExports\n\n\n\n"
+},
+
+{
+    "location": "modules/octree.html#PCLOctree.jl-1",
     "page": "Octree",
     "title": "PCLOctree.jl",
     "category": "section",
@@ -1321,7 +1369,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/octree.html#Index-1",
+    "location": "modules/octree.html#Index-1",
     "page": "Octree",
     "title": "Index",
     "category": "section",
@@ -1329,7 +1377,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/octree.html#Reference-1",
+    "location": "modules/octree.html#Reference-1",
     "page": "Octree",
     "title": "Reference",
     "category": "section",
@@ -1337,7 +1385,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/recognition.html#",
+    "location": "modules/recognition.html#",
     "page": "Recognition",
     "title": "Recognition",
     "category": "page",
@@ -1345,7 +1393,15 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/recognition.html#PCLRecognition.jl-1",
+    "location": "modules/recognition.html#PCLRecognition",
+    "page": "Recognition",
+    "title": "PCLRecognition",
+    "category": "Module",
+    "text": "The PCL recognition module contains algorithms used for Object Recognition applications.\n\nhttp://docs.pointclouds.org/trunk/group__recognition.html\n\nExports\n\nAbstractRecognizer\nAbstractVerifier\nGeometricConsistencyGrouping\nGlobalHypothesesVerification\nHough3DGrouping\naddModels\ngetMask\nrecognize\nsetClutterRegularizer\nsetDetectClutter\nsetGCSize\nsetGCThreshold\nsetHoughBinSize\nsetHoughThreshold\nsetInlierThreshold\nsetInputRf\nsetModelSceneCorrespondences\nsetOcclusionCloud\nsetOcclusionThreshold\nsetRadiusClutter\nsetRadiusNormals\nsetRegularizer\nsetSceneCloud\nsetSceneRf\nsetUseDistanceWeight\nsetUseInterpolation\nverify\n\n\n\n"
+},
+
+{
+    "location": "modules/recognition.html#PCLRecognition.jl-1",
     "page": "Recognition",
     "title": "PCLRecognition.jl",
     "category": "section",
@@ -1353,7 +1409,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/recognition.html#Index-1",
+    "location": "modules/recognition.html#Index-1",
     "page": "Recognition",
     "title": "Index",
     "category": "section",
@@ -1361,7 +1417,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/recognition.html#PCLRecognition.GeometricConsistencyGrouping",
+    "location": "modules/recognition.html#PCLRecognition.GeometricConsistencyGrouping",
     "page": "Recognition",
     "title": "PCLRecognition.GeometricConsistencyGrouping",
     "category": "Constant",
@@ -1369,7 +1425,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/recognition.html#PCLRecognition.GlobalHypothesesVerification",
+    "location": "modules/recognition.html#PCLRecognition.GlobalHypothesesVerification",
     "page": "Recognition",
     "title": "PCLRecognition.GlobalHypothesesVerification",
     "category": "Constant",
@@ -1377,7 +1433,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/recognition.html#PCLRecognition.Hough3DGrouping",
+    "location": "modules/recognition.html#PCLRecognition.Hough3DGrouping",
     "page": "Recognition",
     "title": "PCLRecognition.Hough3DGrouping",
     "category": "Constant",
@@ -1385,7 +1441,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/recognition.html#PCLRecognition.GeometricConsistencyGroupingPtr",
+    "location": "modules/recognition.html#PCLRecognition.GeometricConsistencyGroupingPtr",
     "page": "Recognition",
     "title": "PCLRecognition.GeometricConsistencyGroupingPtr",
     "category": "Type",
@@ -1393,7 +1449,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/recognition.html#PCLRecognition.GeometricConsistencyGroupingVal",
+    "location": "modules/recognition.html#PCLRecognition.GeometricConsistencyGroupingVal",
     "page": "Recognition",
     "title": "PCLRecognition.GeometricConsistencyGroupingVal",
     "category": "Type",
@@ -1401,7 +1457,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/recognition.html#PCLRecognition.GlobalHypothesesVerificationPtr",
+    "location": "modules/recognition.html#PCLRecognition.GlobalHypothesesVerificationPtr",
     "page": "Recognition",
     "title": "PCLRecognition.GlobalHypothesesVerificationPtr",
     "category": "Type",
@@ -1409,7 +1465,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/recognition.html#PCLRecognition.GlobalHypothesesVerificationVal",
+    "location": "modules/recognition.html#PCLRecognition.GlobalHypothesesVerificationVal",
     "page": "Recognition",
     "title": "PCLRecognition.GlobalHypothesesVerificationVal",
     "category": "Type",
@@ -1417,7 +1473,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/recognition.html#PCLRecognition.Hough3DGroupingPtr",
+    "location": "modules/recognition.html#PCLRecognition.Hough3DGroupingPtr",
     "page": "Recognition",
     "title": "PCLRecognition.Hough3DGroupingPtr",
     "category": "Type",
@@ -1425,7 +1481,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/recognition.html#PCLRecognition.Hough3DGroupingVal",
+    "location": "modules/recognition.html#PCLRecognition.Hough3DGroupingVal",
     "page": "Recognition",
     "title": "PCLRecognition.Hough3DGroupingVal",
     "category": "Type",
@@ -1433,7 +1489,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/recognition.html#Reference-1",
+    "location": "modules/recognition.html#Reference-1",
     "page": "Recognition",
     "title": "Reference",
     "category": "section",
@@ -1441,7 +1497,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/registration.html#",
+    "location": "modules/registration.html#",
     "page": "Registration",
     "title": "Registration",
     "category": "page",
@@ -1449,7 +1505,15 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/registration.html#PCLRegistration.jl-1",
+    "location": "modules/registration.html#PCLRegistration",
+    "page": "Registration",
+    "title": "PCLRegistration",
+    "category": "Module",
+    "text": "The pcl_registration library implements a plethora of point cloud registration algorithms for both organized an unorganized (general purpose) datasets.\n\nhttp://docs.pointclouds.org/trunk/group__registration.html\n\nExports\n\nAbstractRegistration\nIterativeClosestPoint\nalign\ngetInputSource\ngetInputTarget\ngetSearchMethodTarget\nhasConverged\nsetCorrespondenceEstimation\nsetInputSource\nsetInputTarget\nsetMaxCorrespondenceDistance\nsetMaximumIterations\nsetSearchMethodTarget\nsetTransformationEstimation\n\n\n\n"
+},
+
+{
+    "location": "modules/registration.html#PCLRegistration.jl-1",
     "page": "Registration",
     "title": "PCLRegistration.jl",
     "category": "section",
@@ -1457,7 +1521,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/registration.html#Index-1",
+    "location": "modules/registration.html#Index-1",
     "page": "Registration",
     "title": "Index",
     "category": "section",
@@ -1465,7 +1529,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/registration.html#PCLRegistration.IterativeClosestPoint",
+    "location": "modules/registration.html#PCLRegistration.IterativeClosestPoint",
     "page": "Registration",
     "title": "PCLRegistration.IterativeClosestPoint",
     "category": "Constant",
@@ -1473,7 +1537,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/registration.html#PCLRegistration.IterativeClosestPointPtr",
+    "location": "modules/registration.html#PCLRegistration.IterativeClosestPointPtr",
     "page": "Registration",
     "title": "PCLRegistration.IterativeClosestPointPtr",
     "category": "Type",
@@ -1481,7 +1545,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/registration.html#PCLRegistration.IterativeClosestPointVal",
+    "location": "modules/registration.html#PCLRegistration.IterativeClosestPointVal",
     "page": "Registration",
     "title": "PCLRegistration.IterativeClosestPointVal",
     "category": "Type",
@@ -1489,7 +1553,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/registration.html#Reference-1",
+    "location": "modules/registration.html#Reference-1",
     "page": "Registration",
     "title": "Reference",
     "category": "section",
@@ -1497,7 +1561,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#",
+    "location": "modules/sampleconsensus.html#",
     "page": "SampleConsensus",
     "title": "SampleConsensus",
     "category": "page",
@@ -1505,7 +1569,15 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.jl-1",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus",
+    "page": "SampleConsensus",
+    "title": "PCLSampleConsensus",
+    "category": "Module",
+    "text": "The pcl_sample_consensus library holds SAmple Consensus (SAC) methods like RANSAC and models like planes and cylinders.\n\nhttp://docs.pointclouds.org/trunk/group__sample__consensus.html\n\nExports\n\nSACMODEL_CIRCLE2D\nSACMODEL_CIRCLE3D\nSACMODEL_CONE\nSACMODEL_CYLINDER\nSACMODEL_LINE\nSACMODEL_NORMAL_PARALLEL_PLANE\nSACMODEL_NORMAL_PLANE\nSACMODEL_NORMAL_SPHERE\nSACMODEL_PARALLEL_LINE\nSACMODEL_PARALLEL_LINES\nSACMODEL_PARALLEL_PLANE\nSACMODEL_PERPENDICULAR_PLANE\nSACMODEL_PLANE\nSACMODEL_REGISTRATION\nSACMODEL_REGISTRATION_2D\nSACMODEL_SPHERE\nSACMODEL_STICK\nSACMODEL_TORUS\nSAC_LMEDS\nSAC_MLESAC\nSAC_MSAC\nSAC_PROSAC\nSAC_RANSAC\nSAC_RMSAC\nSAC_RRANSAC\n\n\n\n"
+},
+
+{
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.jl-1",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.jl",
     "category": "section",
@@ -1513,7 +1585,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#Index-1",
+    "location": "modules/sampleconsensus.html#Index-1",
     "page": "SampleConsensus",
     "title": "Index",
     "category": "section",
@@ -1521,7 +1593,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SACMODEL_CIRCLE2D",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SACMODEL_CIRCLE2D",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SACMODEL_CIRCLE2D",
     "category": "Constant",
@@ -1529,7 +1601,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SACMODEL_CIRCLE3D",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SACMODEL_CIRCLE3D",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SACMODEL_CIRCLE3D",
     "category": "Constant",
@@ -1537,7 +1609,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SACMODEL_CONE",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SACMODEL_CONE",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SACMODEL_CONE",
     "category": "Constant",
@@ -1545,7 +1617,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SACMODEL_CYLINDER",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SACMODEL_CYLINDER",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SACMODEL_CYLINDER",
     "category": "Constant",
@@ -1553,7 +1625,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SACMODEL_LINE",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SACMODEL_LINE",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SACMODEL_LINE",
     "category": "Constant",
@@ -1561,7 +1633,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SACMODEL_NORMAL_PARALLEL_PLANE",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SACMODEL_NORMAL_PARALLEL_PLANE",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SACMODEL_NORMAL_PARALLEL_PLANE",
     "category": "Constant",
@@ -1569,7 +1641,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SACMODEL_NORMAL_PLANE",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SACMODEL_NORMAL_PLANE",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SACMODEL_NORMAL_PLANE",
     "category": "Constant",
@@ -1577,7 +1649,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SACMODEL_NORMAL_SPHERE",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SACMODEL_NORMAL_SPHERE",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SACMODEL_NORMAL_SPHERE",
     "category": "Constant",
@@ -1585,7 +1657,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SACMODEL_PARALLEL_LINE",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SACMODEL_PARALLEL_LINE",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SACMODEL_PARALLEL_LINE",
     "category": "Constant",
@@ -1593,7 +1665,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SACMODEL_PARALLEL_LINES",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SACMODEL_PARALLEL_LINES",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SACMODEL_PARALLEL_LINES",
     "category": "Constant",
@@ -1601,7 +1673,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SACMODEL_PARALLEL_PLANE",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SACMODEL_PARALLEL_PLANE",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SACMODEL_PARALLEL_PLANE",
     "category": "Constant",
@@ -1609,7 +1681,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SACMODEL_PERPENDICULAR_PLANE",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SACMODEL_PERPENDICULAR_PLANE",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SACMODEL_PERPENDICULAR_PLANE",
     "category": "Constant",
@@ -1617,7 +1689,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SACMODEL_PLANE",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SACMODEL_PLANE",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SACMODEL_PLANE",
     "category": "Constant",
@@ -1625,7 +1697,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SACMODEL_REGISTRATION",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SACMODEL_REGISTRATION",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SACMODEL_REGISTRATION",
     "category": "Constant",
@@ -1633,7 +1705,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SACMODEL_REGISTRATION_2D",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SACMODEL_REGISTRATION_2D",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SACMODEL_REGISTRATION_2D",
     "category": "Constant",
@@ -1641,7 +1713,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SACMODEL_SPHERE",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SACMODEL_SPHERE",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SACMODEL_SPHERE",
     "category": "Constant",
@@ -1649,7 +1721,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SACMODEL_STICK",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SACMODEL_STICK",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SACMODEL_STICK",
     "category": "Constant",
@@ -1657,7 +1729,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SACMODEL_TORUS",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SACMODEL_TORUS",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SACMODEL_TORUS",
     "category": "Constant",
@@ -1665,7 +1737,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SAC_LMEDS",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SAC_LMEDS",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SAC_LMEDS",
     "category": "Constant",
@@ -1673,7 +1745,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SAC_MLESAC",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SAC_MLESAC",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SAC_MLESAC",
     "category": "Constant",
@@ -1681,7 +1753,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SAC_MSAC",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SAC_MSAC",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SAC_MSAC",
     "category": "Constant",
@@ -1689,7 +1761,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SAC_PROSAC",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SAC_PROSAC",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SAC_PROSAC",
     "category": "Constant",
@@ -1697,7 +1769,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SAC_RANSAC",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SAC_RANSAC",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SAC_RANSAC",
     "category": "Constant",
@@ -1705,7 +1777,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SAC_RMSAC",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SAC_RMSAC",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SAC_RMSAC",
     "category": "Constant",
@@ -1713,7 +1785,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#PCLSampleConsensus.SAC_RRANSAC",
+    "location": "modules/sampleconsensus.html#PCLSampleConsensus.SAC_RRANSAC",
     "page": "SampleConsensus",
     "title": "PCLSampleConsensus.SAC_RRANSAC",
     "category": "Constant",
@@ -1721,7 +1793,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/sampleconsensus.html#Reference-1",
+    "location": "modules/sampleconsensus.html#Reference-1",
     "page": "SampleConsensus",
     "title": "Reference",
     "category": "section",
@@ -1729,7 +1801,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/search.html#",
+    "location": "modules/search.html#",
     "page": "Search",
     "title": "Search",
     "category": "page",
@@ -1737,7 +1809,15 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/search.html#PCLSearch.jl-1",
+    "location": "modules/search.html#PCLSearch",
+    "page": "Search",
+    "title": "PCLSearch",
+    "category": "Module",
+    "text": "The pcl_search library provides methods for searching for nearest neighbors using different data structures.\n\nhttp://docs.pointclouds.org/trunk/group__search.html\n\nExports\n\nKdTree\nOctree\nSearch\ngetName\ngetSortedResults\nsetSortedResults\n\n\n\n"
+},
+
+{
+    "location": "modules/search.html#PCLSearch.jl-1",
     "page": "Search",
     "title": "PCLSearch.jl",
     "category": "section",
@@ -1745,7 +1825,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/search.html#Index-1",
+    "location": "modules/search.html#Index-1",
     "page": "Search",
     "title": "Index",
     "category": "section",
@@ -1753,7 +1833,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/search.html#PCLSearch.KdTree",
+    "location": "modules/search.html#PCLSearch.KdTree",
     "page": "Search",
     "title": "PCLSearch.KdTree",
     "category": "Constant",
@@ -1761,7 +1841,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/search.html#PCLSearch.Octree",
+    "location": "modules/search.html#PCLSearch.Octree",
     "page": "Search",
     "title": "PCLSearch.Octree",
     "category": "Constant",
@@ -1769,7 +1849,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/search.html#PCLSearch.KdTreePtr",
+    "location": "modules/search.html#PCLSearch.KdTreePtr",
     "page": "Search",
     "title": "PCLSearch.KdTreePtr",
     "category": "Type",
@@ -1777,7 +1857,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/search.html#PCLSearch.KdTreeVal",
+    "location": "modules/search.html#PCLSearch.KdTreeVal",
     "page": "Search",
     "title": "PCLSearch.KdTreeVal",
     "category": "Type",
@@ -1785,7 +1865,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/search.html#PCLSearch.OctreePtr",
+    "location": "modules/search.html#PCLSearch.OctreePtr",
     "page": "Search",
     "title": "PCLSearch.OctreePtr",
     "category": "Type",
@@ -1793,7 +1873,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/search.html#PCLSearch.OctreeVal",
+    "location": "modules/search.html#PCLSearch.OctreeVal",
     "page": "Search",
     "title": "PCLSearch.OctreeVal",
     "category": "Type",
@@ -1801,7 +1881,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/search.html#Reference-1",
+    "location": "modules/search.html#Reference-1",
     "page": "Search",
     "title": "Reference",
     "category": "section",
@@ -1809,7 +1889,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/segmentation.html#",
+    "location": "modules/segmentation.html#",
     "page": "Segmentation",
     "title": "Segmentation",
     "category": "page",
@@ -1817,7 +1897,15 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/segmentation.html#PCLSegmentation.jl-1",
+    "location": "modules/segmentation.html#PCLSegmentation",
+    "page": "Segmentation",
+    "title": "PCLSegmentation",
+    "category": "Module",
+    "text": "The pcl_segmentation library contains algorithms for segmenting a point cloud into distinct clusters.\n\nhttp://docs.pointclouds.org/trunk/group__segmentation.html\n\nExports\n\nAbstractSegmentation\nRegionGrowingRGB\nSACSegmentation\nextract\ngetColoredCloud\nsegment\nsetCurvatureThreshold\nsetDistanceThreshold\nsetMaxClusterSize\nsetMaxIterations\nsetMethodType\nsetMinClusterSize\nsetModelType\nsetOptimizeCoefficients\nsetPointColorThreshold\nsetRegionColorThreshold\nsetSearchMethod\nsetSmoothnessThreshold\n\n\n\n"
+},
+
+{
+    "location": "modules/segmentation.html#PCLSegmentation.jl-1",
     "page": "Segmentation",
     "title": "PCLSegmentation.jl",
     "category": "section",
@@ -1825,7 +1913,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/segmentation.html#Index-1",
+    "location": "modules/segmentation.html#Index-1",
     "page": "Segmentation",
     "title": "Index",
     "category": "section",
@@ -1833,7 +1921,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/segmentation.html#PCLSegmentation.RegionGrowingRGB",
+    "location": "modules/segmentation.html#PCLSegmentation.RegionGrowingRGB",
     "page": "Segmentation",
     "title": "PCLSegmentation.RegionGrowingRGB",
     "category": "Constant",
@@ -1841,7 +1929,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/segmentation.html#PCLSegmentation.SACSegmentation",
+    "location": "modules/segmentation.html#PCLSegmentation.SACSegmentation",
     "page": "Segmentation",
     "title": "PCLSegmentation.SACSegmentation",
     "category": "Constant",
@@ -1849,7 +1937,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/segmentation.html#PCLSegmentation.RegionGrowingRGBPtr",
+    "location": "modules/segmentation.html#PCLSegmentation.RegionGrowingRGBPtr",
     "page": "Segmentation",
     "title": "PCLSegmentation.RegionGrowingRGBPtr",
     "category": "Type",
@@ -1857,7 +1945,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/segmentation.html#PCLSegmentation.RegionGrowingRGBVal",
+    "location": "modules/segmentation.html#PCLSegmentation.RegionGrowingRGBVal",
     "page": "Segmentation",
     "title": "PCLSegmentation.RegionGrowingRGBVal",
     "category": "Type",
@@ -1865,7 +1953,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/segmentation.html#PCLSegmentation.SACSegmentationPtr",
+    "location": "modules/segmentation.html#PCLSegmentation.SACSegmentationPtr",
     "page": "Segmentation",
     "title": "PCLSegmentation.SACSegmentationPtr",
     "category": "Type",
@@ -1873,7 +1961,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/segmentation.html#PCLSegmentation.SACSegmentationVal",
+    "location": "modules/segmentation.html#PCLSegmentation.SACSegmentationVal",
     "page": "Segmentation",
     "title": "PCLSegmentation.SACSegmentationVal",
     "category": "Type",
@@ -1881,7 +1969,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/segmentation.html#Reference-1",
+    "location": "modules/segmentation.html#Reference-1",
     "page": "Segmentation",
     "title": "Reference",
     "category": "section",
@@ -1889,7 +1977,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/surface.html#",
+    "location": "modules/surface.html#",
     "page": "Surface",
     "title": "Surface",
     "category": "page",
@@ -1897,7 +1985,15 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/surface.html#PCLSurface.jl-1",
+    "location": "modules/surface.html#PCLSurface",
+    "page": "Surface",
+    "title": "PCLSurface",
+    "category": "Module",
+    "text": "The pcl_surface library deals with reconstructing the original surfaces from 3D scans.\n\nhttp://docs.pointclouds.org/trunk/group__surface.html\n\nExports\n\n\n\n"
+},
+
+{
+    "location": "modules/surface.html#PCLSurface.jl-1",
     "page": "Surface",
     "title": "PCLSurface.jl",
     "category": "section",
@@ -1905,7 +2001,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/surface.html#Index-1",
+    "location": "modules/surface.html#Index-1",
     "page": "Surface",
     "title": "Index",
     "category": "section",
@@ -1913,7 +2009,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/surface.html#Reference-1",
+    "location": "modules/surface.html#Reference-1",
     "page": "Surface",
     "title": "Reference",
     "category": "section",
@@ -1921,7 +2017,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#",
+    "location": "modules/tracking.html#",
     "page": "Tracking",
     "title": "Tracking",
     "category": "page",
@@ -1929,7 +2025,15 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.jl-1",
+    "location": "modules/tracking.html#PCLTracking",
+    "page": "Tracking",
+    "title": "PCLTracking",
+    "category": "Module",
+    "text": "3D object tracknig\n\nExports\n\nAbstractCloudCoherence\nAbstractCoherence\nAbstractTracker\nApproxNearestPairPointCloudCoherence\nDistanceCoherence\nHSVColorCoherence\nKLDAdaptiveParticleFilterOMPTracker\nKLDAdaptiveParticleFilterTracker\nNearestPairPointCloudCoherence\nNormalCoherence\nParticleXYR\nParticleXYRP\nParticleXYRPY\nParticleXYZR\nParticleXYZRPY\naddPointCoherence\ncompute\ngetResult\nsetBinSize\nsetCloudCoherence\nsetDelta\nsetEpsilon\nsetInitialNoiseCovariance\nsetInitialNoiseMean\nsetIterationNum\nsetMaximumDistance\nsetMaximumParticleNum\nsetParticleNum\nsetReferenceCloud\nsetResampleLikelihoodThr\nsetSearchMethod\nsetStepNoiseCovariance\nsetTrans\nsetUseNormal\nsetWeight\ntoEigenMatrix\n\n\n\n"
+},
+
+{
+    "location": "modules/tracking.html#PCLTracking.jl-1",
     "page": "Tracking",
     "title": "PCLTracking.jl",
     "category": "section",
@@ -1937,7 +2041,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#Index-1",
+    "location": "modules/tracking.html#Index-1",
     "page": "Tracking",
     "title": "Index",
     "category": "section",
@@ -1945,7 +2049,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.ApproxNearestPairPointCloudCoherence",
+    "location": "modules/tracking.html#PCLTracking.ApproxNearestPairPointCloudCoherence",
     "page": "Tracking",
     "title": "PCLTracking.ApproxNearestPairPointCloudCoherence",
     "category": "Constant",
@@ -1953,7 +2057,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.DistanceCoherence",
+    "location": "modules/tracking.html#PCLTracking.DistanceCoherence",
     "page": "Tracking",
     "title": "PCLTracking.DistanceCoherence",
     "category": "Constant",
@@ -1961,7 +2065,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.HSVColorCoherence",
+    "location": "modules/tracking.html#PCLTracking.HSVColorCoherence",
     "page": "Tracking",
     "title": "PCLTracking.HSVColorCoherence",
     "category": "Constant",
@@ -1969,7 +2073,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.KLDAdaptiveParticleFilterOMPTracker",
+    "location": "modules/tracking.html#PCLTracking.KLDAdaptiveParticleFilterOMPTracker",
     "page": "Tracking",
     "title": "PCLTracking.KLDAdaptiveParticleFilterOMPTracker",
     "category": "Constant",
@@ -1977,7 +2081,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.KLDAdaptiveParticleFilterTracker",
+    "location": "modules/tracking.html#PCLTracking.KLDAdaptiveParticleFilterTracker",
     "page": "Tracking",
     "title": "PCLTracking.KLDAdaptiveParticleFilterTracker",
     "category": "Constant",
@@ -1985,7 +2089,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.NearestPairPointCloudCoherence",
+    "location": "modules/tracking.html#PCLTracking.NearestPairPointCloudCoherence",
     "page": "Tracking",
     "title": "PCLTracking.NearestPairPointCloudCoherence",
     "category": "Constant",
@@ -1993,7 +2097,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.NormalCoherence",
+    "location": "modules/tracking.html#PCLTracking.NormalCoherence",
     "page": "Tracking",
     "title": "PCLTracking.NormalCoherence",
     "category": "Constant",
@@ -2001,7 +2105,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.ParticleXYR",
+    "location": "modules/tracking.html#PCLTracking.ParticleXYR",
     "page": "Tracking",
     "title": "PCLTracking.ParticleXYR",
     "category": "Type",
@@ -2009,7 +2113,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.ParticleXYRP",
+    "location": "modules/tracking.html#PCLTracking.ParticleXYRP",
     "page": "Tracking",
     "title": "PCLTracking.ParticleXYRP",
     "category": "Type",
@@ -2017,7 +2121,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.ParticleXYRPY",
+    "location": "modules/tracking.html#PCLTracking.ParticleXYRPY",
     "page": "Tracking",
     "title": "PCLTracking.ParticleXYRPY",
     "category": "Type",
@@ -2025,7 +2129,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.ParticleXYZR",
+    "location": "modules/tracking.html#PCLTracking.ParticleXYZR",
     "page": "Tracking",
     "title": "PCLTracking.ParticleXYZR",
     "category": "Type",
@@ -2033,7 +2137,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.ParticleXYZRPY",
+    "location": "modules/tracking.html#PCLTracking.ParticleXYZRPY",
     "page": "Tracking",
     "title": "PCLTracking.ParticleXYZRPY",
     "category": "Type",
@@ -2041,7 +2145,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.ApproxNearestPairPointCloudCoherencePtr",
+    "location": "modules/tracking.html#PCLTracking.ApproxNearestPairPointCloudCoherencePtr",
     "page": "Tracking",
     "title": "PCLTracking.ApproxNearestPairPointCloudCoherencePtr",
     "category": "Type",
@@ -2049,7 +2153,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.ApproxNearestPairPointCloudCoherenceVal",
+    "location": "modules/tracking.html#PCLTracking.ApproxNearestPairPointCloudCoherenceVal",
     "page": "Tracking",
     "title": "PCLTracking.ApproxNearestPairPointCloudCoherenceVal",
     "category": "Type",
@@ -2057,7 +2161,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.DistanceCoherencePtr",
+    "location": "modules/tracking.html#PCLTracking.DistanceCoherencePtr",
     "page": "Tracking",
     "title": "PCLTracking.DistanceCoherencePtr",
     "category": "Type",
@@ -2065,7 +2169,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.DistanceCoherenceVal",
+    "location": "modules/tracking.html#PCLTracking.DistanceCoherenceVal",
     "page": "Tracking",
     "title": "PCLTracking.DistanceCoherenceVal",
     "category": "Type",
@@ -2073,7 +2177,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.HSVColorCoherencePtr",
+    "location": "modules/tracking.html#PCLTracking.HSVColorCoherencePtr",
     "page": "Tracking",
     "title": "PCLTracking.HSVColorCoherencePtr",
     "category": "Type",
@@ -2081,7 +2185,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.HSVColorCoherenceVal",
+    "location": "modules/tracking.html#PCLTracking.HSVColorCoherenceVal",
     "page": "Tracking",
     "title": "PCLTracking.HSVColorCoherenceVal",
     "category": "Type",
@@ -2089,7 +2193,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.KLDAdaptiveParticleFilterOMPTrackerPtr",
+    "location": "modules/tracking.html#PCLTracking.KLDAdaptiveParticleFilterOMPTrackerPtr",
     "page": "Tracking",
     "title": "PCLTracking.KLDAdaptiveParticleFilterOMPTrackerPtr",
     "category": "Type",
@@ -2097,7 +2201,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.KLDAdaptiveParticleFilterOMPTrackerVal",
+    "location": "modules/tracking.html#PCLTracking.KLDAdaptiveParticleFilterOMPTrackerVal",
     "page": "Tracking",
     "title": "PCLTracking.KLDAdaptiveParticleFilterOMPTrackerVal",
     "category": "Type",
@@ -2105,7 +2209,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.KLDAdaptiveParticleFilterTrackerPtr",
+    "location": "modules/tracking.html#PCLTracking.KLDAdaptiveParticleFilterTrackerPtr",
     "page": "Tracking",
     "title": "PCLTracking.KLDAdaptiveParticleFilterTrackerPtr",
     "category": "Type",
@@ -2113,7 +2217,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.KLDAdaptiveParticleFilterTrackerVal",
+    "location": "modules/tracking.html#PCLTracking.KLDAdaptiveParticleFilterTrackerVal",
     "page": "Tracking",
     "title": "PCLTracking.KLDAdaptiveParticleFilterTrackerVal",
     "category": "Type",
@@ -2121,7 +2225,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.NearestPairPointCloudCoherencePtr",
+    "location": "modules/tracking.html#PCLTracking.NearestPairPointCloudCoherencePtr",
     "page": "Tracking",
     "title": "PCLTracking.NearestPairPointCloudCoherencePtr",
     "category": "Type",
@@ -2129,7 +2233,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.NearestPairPointCloudCoherenceVal",
+    "location": "modules/tracking.html#PCLTracking.NearestPairPointCloudCoherenceVal",
     "page": "Tracking",
     "title": "PCLTracking.NearestPairPointCloudCoherenceVal",
     "category": "Type",
@@ -2137,7 +2241,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.NormalCoherencePtr",
+    "location": "modules/tracking.html#PCLTracking.NormalCoherencePtr",
     "page": "Tracking",
     "title": "PCLTracking.NormalCoherencePtr",
     "category": "Type",
@@ -2145,7 +2249,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#PCLTracking.NormalCoherenceVal",
+    "location": "modules/tracking.html#PCLTracking.NormalCoherenceVal",
     "page": "Tracking",
     "title": "PCLTracking.NormalCoherenceVal",
     "category": "Type",
@@ -2153,7 +2257,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/tracking.html#Reference-1",
+    "location": "modules/tracking.html#Reference-1",
     "page": "Tracking",
     "title": "Reference",
     "category": "section",
@@ -2161,7 +2265,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#",
+    "location": "modules/visualization.html#",
     "page": "Visualization",
     "title": "Visualization",
     "category": "page",
@@ -2169,7 +2273,15 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.jl-1",
+    "location": "modules/visualization.html#PCLVisualization",
+    "page": "Visualization",
+    "title": "PCLVisualization",
+    "category": "Module",
+    "text": "3D point cloud visualization\n\nhttp://docs.pointclouds.org/trunk/group__visualization.html\n\nExports\n\nPCLVisualizer\nPCL_INSIDE_FRUSTUM\nPCL_INTERSECT_FRUSTUM\nPCL_OUTSIDE_FRUSTUM\nPCL_VISUALIZER_COLOR\nPCL_VISUALIZER_FONT_SIZE\nPCL_VISUALIZER_IMMEDIATE_RENDERING\nPCL_VISUALIZER_LINE_WIDTH\nPCL_VISUALIZER_LUT\nPCL_VISUALIZER_LUT_GREY\nPCL_VISUALIZER_LUT_HSV\nPCL_VISUALIZER_LUT_HSV_INVERSE\nPCL_VISUALIZER_LUT_JET\nPCL_VISUALIZER_LUT_JET_INVERSE\nPCL_VISUALIZER_OPACITY\nPCL_VISUALIZER_POINT_SIZE\nPCL_VISUALIZER_REPRESENTATION\nPCL_VISUALIZER_REPRESENTATION_POINTS\nPCL_VISUALIZER_REPRESENTATION_SURFACE\nPCL_VISUALIZER_REPRESENTATION_WIREFRAME\nPCL_VISUALIZER_SHADING\nPCL_VISUALIZER_SHADING_FLAT\nPCL_VISUALIZER_SHADING_GOURAUD\nPCL_VISUALIZER_SHADING_PHONG\nPointCloudColorHandler\nPointCloudColorHandlerCustom\nPointCloudColorHandlerRGBField\naddCoordinateSystem\naddPointCloud\naddText\ngetRenderWindow\nhasInteractor\ninitCameraParameters\nregisterPointPickingCallback\nremoveAllCoordinateSystems\nremoveAllPointClouds\nremoveAllShapes\nremovePointCloud\nrenderedData\nresetCamera\nresetStoppedFlag\nsetBackgroundColor\nsetCameraClipDistances\nsetCameraPosition\nsetOffScreenRendering\nsetPointCloudRenderingProperties\nsetShowFPS\nspin\nspinOnce\nupdateCamera\nupdatePointCloud\nupdateText\nwasStopped\n\n\n\n"
+},
+
+{
+    "location": "modules/visualization.html#PCLVisualization.jl-1",
     "page": "Visualization",
     "title": "PCLVisualization.jl",
     "category": "section",
@@ -2177,7 +2289,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#Index-1",
+    "location": "modules/visualization.html#Index-1",
     "page": "Visualization",
     "title": "Index",
     "category": "section",
@@ -2185,7 +2297,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_INSIDE_FRUSTUM",
+    "location": "modules/visualization.html#PCLVisualization.PCL_INSIDE_FRUSTUM",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_INSIDE_FRUSTUM",
     "category": "Constant",
@@ -2193,7 +2305,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_INTERSECT_FRUSTUM",
+    "location": "modules/visualization.html#PCLVisualization.PCL_INTERSECT_FRUSTUM",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_INTERSECT_FRUSTUM",
     "category": "Constant",
@@ -2201,7 +2313,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_OUTSIDE_FRUSTUM",
+    "location": "modules/visualization.html#PCLVisualization.PCL_OUTSIDE_FRUSTUM",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_OUTSIDE_FRUSTUM",
     "category": "Constant",
@@ -2209,7 +2321,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_VISUALIZER_COLOR",
+    "location": "modules/visualization.html#PCLVisualization.PCL_VISUALIZER_COLOR",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_VISUALIZER_COLOR",
     "category": "Constant",
@@ -2217,7 +2329,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_VISUALIZER_FONT_SIZE",
+    "location": "modules/visualization.html#PCLVisualization.PCL_VISUALIZER_FONT_SIZE",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_VISUALIZER_FONT_SIZE",
     "category": "Constant",
@@ -2225,7 +2337,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_VISUALIZER_IMMEDIATE_RENDERING",
+    "location": "modules/visualization.html#PCLVisualization.PCL_VISUALIZER_IMMEDIATE_RENDERING",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_VISUALIZER_IMMEDIATE_RENDERING",
     "category": "Constant",
@@ -2233,7 +2345,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_VISUALIZER_LINE_WIDTH",
+    "location": "modules/visualization.html#PCLVisualization.PCL_VISUALIZER_LINE_WIDTH",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_VISUALIZER_LINE_WIDTH",
     "category": "Constant",
@@ -2241,7 +2353,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_VISUALIZER_LUT",
+    "location": "modules/visualization.html#PCLVisualization.PCL_VISUALIZER_LUT",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_VISUALIZER_LUT",
     "category": "Constant",
@@ -2249,7 +2361,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_VISUALIZER_LUT_GREY",
+    "location": "modules/visualization.html#PCLVisualization.PCL_VISUALIZER_LUT_GREY",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_VISUALIZER_LUT_GREY",
     "category": "Constant",
@@ -2257,7 +2369,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_VISUALIZER_LUT_HSV",
+    "location": "modules/visualization.html#PCLVisualization.PCL_VISUALIZER_LUT_HSV",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_VISUALIZER_LUT_HSV",
     "category": "Constant",
@@ -2265,7 +2377,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_VISUALIZER_LUT_HSV_INVERSE",
+    "location": "modules/visualization.html#PCLVisualization.PCL_VISUALIZER_LUT_HSV_INVERSE",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_VISUALIZER_LUT_HSV_INVERSE",
     "category": "Constant",
@@ -2273,7 +2385,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_VISUALIZER_LUT_JET",
+    "location": "modules/visualization.html#PCLVisualization.PCL_VISUALIZER_LUT_JET",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_VISUALIZER_LUT_JET",
     "category": "Constant",
@@ -2281,7 +2393,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_VISUALIZER_LUT_JET_INVERSE",
+    "location": "modules/visualization.html#PCLVisualization.PCL_VISUALIZER_LUT_JET_INVERSE",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_VISUALIZER_LUT_JET_INVERSE",
     "category": "Constant",
@@ -2289,7 +2401,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_VISUALIZER_OPACITY",
+    "location": "modules/visualization.html#PCLVisualization.PCL_VISUALIZER_OPACITY",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_VISUALIZER_OPACITY",
     "category": "Constant",
@@ -2297,7 +2409,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_VISUALIZER_POINT_SIZE",
+    "location": "modules/visualization.html#PCLVisualization.PCL_VISUALIZER_POINT_SIZE",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_VISUALIZER_POINT_SIZE",
     "category": "Constant",
@@ -2305,7 +2417,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_VISUALIZER_REPRESENTATION",
+    "location": "modules/visualization.html#PCLVisualization.PCL_VISUALIZER_REPRESENTATION",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_VISUALIZER_REPRESENTATION",
     "category": "Constant",
@@ -2313,7 +2425,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_VISUALIZER_REPRESENTATION_POINTS",
+    "location": "modules/visualization.html#PCLVisualization.PCL_VISUALIZER_REPRESENTATION_POINTS",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_VISUALIZER_REPRESENTATION_POINTS",
     "category": "Constant",
@@ -2321,7 +2433,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_VISUALIZER_REPRESENTATION_SURFACE",
+    "location": "modules/visualization.html#PCLVisualization.PCL_VISUALIZER_REPRESENTATION_SURFACE",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_VISUALIZER_REPRESENTATION_SURFACE",
     "category": "Constant",
@@ -2329,7 +2441,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_VISUALIZER_REPRESENTATION_WIREFRAME",
+    "location": "modules/visualization.html#PCLVisualization.PCL_VISUALIZER_REPRESENTATION_WIREFRAME",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_VISUALIZER_REPRESENTATION_WIREFRAME",
     "category": "Constant",
@@ -2337,7 +2449,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_VISUALIZER_SHADING",
+    "location": "modules/visualization.html#PCLVisualization.PCL_VISUALIZER_SHADING",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_VISUALIZER_SHADING",
     "category": "Constant",
@@ -2345,7 +2457,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_VISUALIZER_SHADING_FLAT",
+    "location": "modules/visualization.html#PCLVisualization.PCL_VISUALIZER_SHADING_FLAT",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_VISUALIZER_SHADING_FLAT",
     "category": "Constant",
@@ -2353,7 +2465,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_VISUALIZER_SHADING_GOURAUD",
+    "location": "modules/visualization.html#PCLVisualization.PCL_VISUALIZER_SHADING_GOURAUD",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_VISUALIZER_SHADING_GOURAUD",
     "category": "Constant",
@@ -2361,7 +2473,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PCL_VISUALIZER_SHADING_PHONG",
+    "location": "modules/visualization.html#PCLVisualization.PCL_VISUALIZER_SHADING_PHONG",
     "page": "Visualization",
     "title": "PCLVisualization.PCL_VISUALIZER_SHADING_PHONG",
     "category": "Constant",
@@ -2369,7 +2481,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PointCloudColorHandlerCustom",
+    "location": "modules/visualization.html#PCLVisualization.PointCloudColorHandlerCustom",
     "page": "Visualization",
     "title": "PCLVisualization.PointCloudColorHandlerCustom",
     "category": "Constant",
@@ -2377,7 +2489,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PointCloudColorHandlerRGBField",
+    "location": "modules/visualization.html#PCLVisualization.PointCloudColorHandlerRGBField",
     "page": "Visualization",
     "title": "PCLVisualization.PointCloudColorHandlerRGBField",
     "category": "Constant",
@@ -2385,7 +2497,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PointCloudColorHandlerCustomPtr",
+    "location": "modules/visualization.html#PCLVisualization.PointCloudColorHandlerCustomPtr",
     "page": "Visualization",
     "title": "PCLVisualization.PointCloudColorHandlerCustomPtr",
     "category": "Type",
@@ -2393,7 +2505,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PointCloudColorHandlerCustomVal",
+    "location": "modules/visualization.html#PCLVisualization.PointCloudColorHandlerCustomVal",
     "page": "Visualization",
     "title": "PCLVisualization.PointCloudColorHandlerCustomVal",
     "category": "Type",
@@ -2401,7 +2513,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PointCloudColorHandlerRGBFieldPtr",
+    "location": "modules/visualization.html#PCLVisualization.PointCloudColorHandlerRGBFieldPtr",
     "page": "Visualization",
     "title": "PCLVisualization.PointCloudColorHandlerRGBFieldPtr",
     "category": "Type",
@@ -2409,7 +2521,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#PCLVisualization.PointCloudColorHandlerRGBFieldVal",
+    "location": "modules/visualization.html#PCLVisualization.PointCloudColorHandlerRGBFieldVal",
     "page": "Visualization",
     "title": "PCLVisualization.PointCloudColorHandlerRGBFieldVal",
     "category": "Type",
@@ -2417,11 +2529,59 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/visualization.html#Reference-1",
+    "location": "modules/visualization.html#Reference-1",
     "page": "Visualization",
     "title": "Reference",
     "category": "section",
     "text": "Modules = [PCLVisualization]\nOrder = [:constant, :function, :type, :macro]"
+},
+
+{
+    "location": "modules/libpcl.html#",
+    "page": "LibPCL",
+    "title": "LibPCL",
+    "category": "page",
+    "text": ""
+},
+
+{
+    "location": "modules/libpcl.html#LibPCL",
+    "page": "LibPCL",
+    "title": "LibPCL",
+    "category": "Module",
+    "text": "A special package that manages PCL binary depedencies\n\nPkg.build(\"LibPCL\")\n\ntry to search your system PCL libraries and its dependencies, and throws errors if any issues. If PCL librarires are not found, it will install fresh PCL libraries into deps directrory, but not recommended unless if you have perfect requiremsnts to build PCL, since it's a little hard to build.\n\n\n\n"
+},
+
+{
+    "location": "modules/libpcl.html#LibPCL.jl-1",
+    "page": "LibPCL",
+    "title": "LibPCL.jl",
+    "category": "section",
+    "text": "LibPCL"
+},
+
+{
+    "location": "modules/libpcl.html#Index-1",
+    "page": "LibPCL",
+    "title": "Index",
+    "category": "section",
+    "text": "Modules = [LibPCL]\nOrder = [:constant, :function, :type, :macro]"
+},
+
+{
+    "location": "modules/libpcl.html#LibPCL.find_library_e",
+    "page": "LibPCL",
+    "title": "LibPCL.find_library_e",
+    "category": "Function",
+    "text": "find_library_e(mod, libdirs, ext)\nfind_library_e(mod, libdirs)\nfind_library_e(mod)\n\n\nIt tries to search the specified library by name. Not exported, but meant to be used by other PCL packages.\n\nParameters\n\nmod : Module name\nlibdirs : library seach directries (default is dir of libpclcommon)\next : library extention name (e.g. .so)\n\nRetures\n\nlibpath : library path if found, othrewise return C_NULL\n\nExamples\n\nFrom the PCLVisualization package,\n\nconst libpcl_visualization = LibPCL.find_library_e(\"libpcl_visualization\")\ntry\n    Libdl.dlopen(libpcl_visualization, Libdl.RTLD_GLOBAL)\ncatch e\n    warn(\"You might need to set DYLD_LIBRARY_PATH to load dependencies proeprty.\")\n    rethrow(e)\nend\n\n\n\n"
+},
+
+{
+    "location": "modules/libpcl.html#Reference-1",
+    "page": "LibPCL",
+    "title": "Reference",
+    "category": "section",
+    "text": "Modules = [LibPCL]\nOrder = [:constant, :function, :type, :macro]"
 },
 
 ]}
