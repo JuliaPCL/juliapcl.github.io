@@ -61,7 +61,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Installation",
     "title": "Platform",
     "category": "section",
-    "text": "The packages are tested on the following platforms:macOS 10.10 (clang)\nUbuntu 14.04 (gcc-6/g++-6)"
+    "text": "The packages are tested on the following platforms:macOS 10.11 (clang)\nUbuntu 14.04 (gcc-6/g++-6)"
 },
 
 {
@@ -2605,7 +2605,7 @@ var documenterSearchIndex = {"docs": [
     "page": "LibPCL",
     "title": "LibPCL.find_library_e",
     "category": "Function",
-    "text": "find_library_e(mod)\nfind_library_e(mod, libdirs)\nfind_library_e(mod, libdirs, ext)\n\n\nIt tries to search the specified library by name. Not exported, but meant to be used by other PCL packages.\n\nParameters\n\nmod : Module name\nlibdirs : library seach directries (default is dir of libpclcommon)\next : library extention name (e.g. .so)\n\nRetures\n\nlibpath : library path if found, othrewise return C_NULL\n\nExamples\n\nFrom the PCLVisualization package,\n\nconst libpcl_visualization = LibPCL.find_library_e(\"libpcl_visualization\")\ntry\n    Libdl.dlopen(libpcl_visualization, Libdl.RTLD_GLOBAL)\ncatch e\n    warn(\"You might need to set DYLD_LIBRARY_PATH to load dependencies proeprty.\")\n    rethrow(e)\nend\n\n\n\n"
+    "text": "find_library_e(mod, libdirs)\nfind_library_e(mod)\nfind_library_e(mod, libdirs, ext)\n\n\nIt tries to search the specified library by name. Not exported, but meant to be used by other PCL packages.\n\nParameters\n\nmod : Module name\nlibdirs : library seach directries (default is dir of libpclcommon)\next : library extention name (e.g. .so)\n\nRetures\n\nlibpath : library path if found, othrewise return C_NULL\n\nExamples\n\nFrom the PCLVisualization package,\n\nconst libpcl_visualization = LibPCL.find_library_e(\"libpcl_visualization\")\ntry\n    Libdl.dlopen(libpcl_visualization, Libdl.RTLD_GLOBAL)\ncatch e\n    warn(\"You might need to set DYLD_LIBRARY_PATH to load dependencies proeprty.\")\n    rethrow(e)\nend\n\n\n\n"
 },
 
 {
