@@ -41,9 +41,17 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "installation.html#Requirements-1",
+    "location": "installation.html#Docker-1",
     "page": "Installation",
-    "title": "Requirements",
+    "title": "Docker",
+    "category": "section",
+    "text": "If you don't want to build entire complex dependencies, you can use our docker image, PCL.jl and all dependencies installed. First install Docker, and then run:docker pull r9y9/julia-cxx\ndocker run -it -rm r9y9/julia-cxx:PCLDocker files are available at r9y9/julia-cxx.If you want to build PCL.jl for yourself, read the following guides."
+},
+
+{
+    "location": "installation.html#Requiements-1",
+    "page": "Installation",
+    "title": "Requiements",
     "category": "section",
     "text": ""
 },
@@ -53,7 +61,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Installation",
     "title": "Platform",
     "category": "section",
-    "text": "Currently only tested on OSX."
+    "text": "The packages are tested on the following platforms:macOS 10.10 (clang)\nUbuntu 14.04 (gcc-6/g++-6)"
 },
 
 {
@@ -61,7 +69,31 @@ var documenterSearchIndex = {"docs": [
     "page": "Installation",
     "title": "PCL",
     "category": "section",
-    "text": "You need to install PCL 1.8 or later with shared library option ON. Since PCL have a fair amount of dependencies, you might suffer from build issues. For macOSX, the following command will help to install PCL dependencies:brew install cmake openni openni2 qhull boost glew flann eigen libusb vtk\nexport OPENNI2_INCLUDE=/usr/local/include/ni2\nexport OPENNI2_REDIST=/usr/local/lib/ni2If you have PCL dependencies installed, then recommended installation steps are as follows:git clone https://github.com/PointCloudLibrary/pcl && cd pcl\nmkdir build && cd build\ncmake -DPCL_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=Release -DBUILD_global_tests=OFF -DBUILD_tools=OFF ..\nmake -j4\nmake -j4 install"
+    "text": "You need to install PCL 1.8 or later with shared library option ON. Since PCL have a fair amount of dependencies, be carefull of its dependencies, otherwise you might suffer from build issues."
+},
+
+{
+    "location": "installation.html#macOS-1",
+    "page": "Installation",
+    "title": "macOS",
+    "category": "section",
+    "text": "On macOS, the following command will help to install PCL dependencies:brew install cmake openni openni2 qhull boost glew flann eigen libusb vtk\nexport OPENNI2_INCLUDE=/usr/local/include/ni2\nexport OPENNI2_REDIST=/usr/local/lib/ni2"
+},
+
+{
+    "location": "installation.html#Ubuntu-14.04-1",
+    "page": "Installation",
+    "title": "Ubuntu 14.04",
+    "category": "section",
+    "text": "For Ubuntu, there is a docker image that is confirmed to work with PCL as well as PCL.jl. Check out for the required apt packages from the docker files in r9y9/julia-cxx."
+},
+
+{
+    "location": "installation.html#Compile-and-install-PCL-from-source-1",
+    "page": "Installation",
+    "title": "Compile and install PCL from source",
+    "category": "section",
+    "text": "If you have PCL dependencies installed, then recommended installation steps are as follows:git clone https://github.com/PointCloudLibrary/pcl && cd pcl\nmkdir build && cd build\ncmake -DPCL_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=Release -DBUILD_global_tests=OFF -DBUILD_tools=OFF ..\nmake -j4\nmake -j4 install"
 },
 
 {
@@ -93,7 +125,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Installation",
     "title": "Set environmental variables property",
     "category": "section",
-    "text": "There are a few environmental variables to be set property before installing Julia packages, otherwise it throws errors during package compilation time. You must tell locations of PCL dependencies (boost, FLANN, Eigen and VTK) to Julia via the following environmental variables:Key Default Description\nBOOST_INCLUDE_DIR /usr/local/include (/usr/include/ for linux) Boost include directory\nFLANN_INCLUDE_DIR /usr/local/include (/usr/include/ for linux) Flann include directory\nEIGEN_INCLUDE_DIR /usr/local/include/eigen3 (/usr/include/eigen3 for linux) Eigen include directory\nVTK_INCLUDE_DIR_PARENT /usr/local/include (/usr/include/ for linux) Parent directory for VTK includes\nVTK_INCLUDE_DIR ${VTK_INCLUDE_DIR_PARENT}/vtk-${major}.${minor} VTK include directory (${major} and ${minor} will be automatically detected)"
+    "text": "There are a few environmental variables to be set property before installing Julia packages, otherwise it throws errors during package compilation time. You must tell locations of PCL dependencies (boost, FLANN, Eigen and VTK) to Julia via the following environmental variables:Key Default Description\nBOOST_INCLUDE_DIR /usr/local/include (/usr/include/ for linux) Boost include directory\nFLANN_INCLUDE_DIR /usr/local/include (/usr/include/ for linux) Flann include directory\nEIGEN_INCLUDE_DIR /usr/local/include/eigen3 (/usr/include/eigen3 for linux) Eigen include directory\nVTK_INCLUDE_DIR_PARENT /usr/local/include (/usr/include/ for linux) Parent directory for VTK includes\nVTK_INCLUDE_DIR ${VTK_INCLUDE_DIR_PARENT}/vtk-${major}.${minor} VTK include directory (${major} and ${minor} will be automatically detected)If you have installed all PCL dependencies into its default install path, you might not need to change the default values by setting environmental variables."
 },
 
 {
@@ -101,7 +133,7 @@ var documenterSearchIndex = {"docs": [
     "page": "Installation",
     "title": "Clone and build",
     "category": "section",
-    "text": "You are almost there! Clone the packages:Pkg.clone(\"https://github.com/JuliaPCL/PCLCommon.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLIO.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLFeatures.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLFilters.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLVisualization.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/LibPCL.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLKDTree.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLOctree.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLRecognition.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLSampleConsensus.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLSearch.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLSegmentation.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLTracking.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLRegistration.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLKeyPoints.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCL.jl\")and then:Pkg.build(\"LibPCL\")which searches installed PCL shared libraries. If it fails, please make sure again that you have set correct environmental variables. If you don't have PCL installed, Pkg.build(\"LibPCL\") will try to build and install them into the LibPCL package directory but not recommended, unless if you have perfect requirements to build PCL."
+    "text": "You are almost there! Add and clone the packages:Pkg.add(\"BinDeps\")\nPkg.add(\"DocStringExtensions\")Pkg.clone(\"https://github.com/JuliaPCL/PCLCommon.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLIO.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLFeatures.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLFilters.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLVisualization.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/LibPCL.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLKDTree.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLOctree.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLRecognition.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLSampleConsensus.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLSearch.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLSegmentation.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLTracking.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLRegistration.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCLKeyPoints.jl\")\nPkg.clone(\"https://github.com/JuliaPCL/PCL.jl\")and then:Pkg.build(\"LibPCL\")which searches installed PCL shared libraries. If it fails, please make sure again that you have set correct environmental variables. If you don't have PCL installed, Pkg.build(\"LibPCL\") will try to build and install them into the LibPCL package directory but not recommended, unless if you have perfect requirements to build PCL."
 },
 
 {
@@ -2573,7 +2605,7 @@ var documenterSearchIndex = {"docs": [
     "page": "LibPCL",
     "title": "LibPCL.find_library_e",
     "category": "Function",
-    "text": "find_library_e(mod, libdirs, ext)\nfind_library_e(mod, libdirs)\nfind_library_e(mod)\n\n\nIt tries to search the specified library by name. Not exported, but meant to be used by other PCL packages.\n\nParameters\n\nmod : Module name\nlibdirs : library seach directries (default is dir of libpclcommon)\next : library extention name (e.g. .so)\n\nRetures\n\nlibpath : library path if found, othrewise return C_NULL\n\nExamples\n\nFrom the PCLVisualization package,\n\nconst libpcl_visualization = LibPCL.find_library_e(\"libpcl_visualization\")\ntry\n    Libdl.dlopen(libpcl_visualization, Libdl.RTLD_GLOBAL)\ncatch e\n    warn(\"You might need to set DYLD_LIBRARY_PATH to load dependencies proeprty.\")\n    rethrow(e)\nend\n\n\n\n"
+    "text": "find_library_e(mod)\nfind_library_e(mod, libdirs)\nfind_library_e(mod, libdirs, ext)\n\n\nIt tries to search the specified library by name. Not exported, but meant to be used by other PCL packages.\n\nParameters\n\nmod : Module name\nlibdirs : library seach directries (default is dir of libpclcommon)\next : library extention name (e.g. .so)\n\nRetures\n\nlibpath : library path if found, othrewise return C_NULL\n\nExamples\n\nFrom the PCLVisualization package,\n\nconst libpcl_visualization = LibPCL.find_library_e(\"libpcl_visualization\")\ntry\n    Libdl.dlopen(libpcl_visualization, Libdl.RTLD_GLOBAL)\ncatch e\n    warn(\"You might need to set DYLD_LIBRARY_PATH to load dependencies proeprty.\")\n    rethrow(e)\nend\n\n\n\n"
 },
 
 {
